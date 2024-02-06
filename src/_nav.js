@@ -66,19 +66,19 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Escalabilidade',
-        to: '/base/accordion',
+        to: '/gam/escalabilidade',
       },
       {
         component: CNavItem,
         name: 'Manutenibilidade',
-        to: '/base/breadcrumbs',
+        to: '/gam/manutenibilidade',
       },
     ],
   },
   {
     component: CNavItem,
     name: 'Projeto Piloto',
-    to: '/microfrontend',
+    to: '/projeto-piloto',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
 ]
