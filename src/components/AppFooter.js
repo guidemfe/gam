@@ -5,7 +5,7 @@ const AppFooter = () => {
   return (
     <CFooter>
       <div>
-          GAM V1.0-beta
+          GAM v1.0-beta
         <span className="ms-1">&copy; 2024 - Guideline for Adoption Micro-Frontend.</span>
       </div>
       <div className="ms-auto">

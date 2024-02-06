@@ -47,13 +47,13 @@ const _nav = [
     items: [
       {
         component: CNavItem,
-        name: 'Operacional',
-        to: '/gam/inplementacao-operacional',
+        name: 'Integração',
+        to: '/gam/inplementacao-integração',
       },
       {
         component: CNavItem,
-        name: 'Integração',
-        to: '/gam/inplementacao-integração',
+        name: 'Operacional',
+        to: '/gam/inplementacao-operacional',
       },
     ],
   },

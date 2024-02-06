@@ -1,8 +1,10 @@
 import { CCard, CCardBody, CCardHeader, CCol, CRow, CButton } from '@coreui/react';
 import React from 'react';
 
+import GamPraticalImpl from '../../../assets/images/gam_pratical_implementation.png';
+
 import '../../../scss/_custom.scss';
-import IntroImplemantacaoGam from '../implementacao/IntroImplementacaoGam';
+
 
 const ImplementacaoIntegracaoGam = () => {
   return (
@@ -14,14 +16,33 @@ const ImplementacaoIntegracaoGam = () => {
           </CCardHeader>
           <CCardBody>
           <section>
-                <IntroImplemantacaoGam />
-                <hr />
-                <h3>Implementação - Integração</h3>
+
+            <h3>Implementação Prática</h3>
+              <p className='mb-4'>
+                A fase de Implementação Prática no Guidelines for Adopting Micro-Frontends (GAM)
+                marca a transição do planejamento teórico para a aplicação concreta da arquitetura de
+                Micro-Frontends. Dividida em decisões Operacionais e de Integração, esta etapa visa
+                guiar os arquitetos e desenvolvedores na execução efetiva do paradigma arquitetônico.
+                As estratégias delineadas nas fases anteriores serão agora aplicadas no Projeto Piloto,
+                representando um ambiente controlado para validar e consolidar as decisões tomadas previamente. A implementação prática é o ponto em que as escolhas teóricas começam a se
+                materializar, e cada decisão tem impacto direto na eficiência, escalabilidade e manutenibilidade do sistema. A Figura 4.3 ilustra o fluxo das decisões operacionais e de integração
+                durante esta fase.
+
+              </p>
+                <img src={GamPraticalImpl} alt="Implementação Prática" className="img-fluid mb-3"  />
+              <hr />
+                <h3>Decisões de Integração</h3>
                 <p>
-                O Estudo de Viabilidade, no contexto das diretrizes para adoção de Micro-Frontends (GAM), 
-                é uma fase estratégica e sequencial que busca analisar as viabilidades gerenciais e técnicas 
-                antes de decidir pela implementação da arquitetura de Micro-Frontends. 
-                Essa abordagem visa garantir uma transição suave e bem-sucedida para essa arquitetura inovadora. A imagem abaixo demostra o fluxo
+                A fase de Implementação Prática no Guidelines for Adopting Micro-Frontends (GAM)
+                marca a transição do planejamento teórico para a aplicação concreta da arquitetura de
+                Micro-Frontends. Dividida em decisões Operacionais e de Integração, esta etapa visa
+                guiar os arquitetos e desenvolvedores na execução efetiva do paradigma arquitetônico.
+                As estratégias delineadas nas fases anteriores serão agora aplicadas no Projeto Piloto,
+                representando um ambiente controlado para validar e consolidar as decisões tomadas previamente. 
+                A implementação prática é o ponto em que as escolhas teóricas começam a se
+                materializar, e cada decisão tem impacto direto na eficiência, escalabilidade e manutenibilidade do sistema. A
+                Figura abaixo ilustra o fluxo das decisões operacionais e de integração
+                durante esta fase.
                 </p>
 
                 <ul>
