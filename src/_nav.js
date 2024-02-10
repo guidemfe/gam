@@ -29,6 +29,11 @@ const _nav = [
     items: [
       {
         component: CNavItem,
+        name: 'Introdução',
+        to: '/gam/introducao-viabilidades',
+      },
+      {
+        component: CNavItem,
         name: 'Viabilidades Técnicas',
         to: '/gam/viabilidades-tecnicas',
       },
@@ -45,6 +50,11 @@ const _nav = [
     to: '#',
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
     items: [
+      {
+        component: CNavItem,
+        name: 'Introdução',
+        to: '/gam/introducao-implementacao',
+      },
       {
         component: CNavItem,
         name: 'Integração',
@@ -65,13 +75,18 @@ const _nav = [
     items: [
       {
         component: CNavItem,
+        name: 'Introdução',
+        to: '/gam/introducao-expansao',
+      },
+      {
+        component: CNavItem,
         name: 'Escalabilidade',
-        to: '/gam/escalabilidade',
+        to: '/gam/expansao-escalabilidade',
       },
       {
         component: CNavItem,
         name: 'Manutenibilidade',
-        to: '/gam/manutenibilidade',
+        to: '/gam/expansao-manutenibilidade',
       },
     ],
   },

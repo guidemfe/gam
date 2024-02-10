@@ -2,7 +2,6 @@ import { CCard, CCardBody, CCardHeader, CCol, CRow, CButton } from '@coreui/reac
 import React from 'react';
 
 import '../../../scss/_custom.scss';
-import IntroViabilidadesGam from './IntroViabilidadeGam';
 
 const ViabilidadesTecnicasGam = () => {
   return (
@@ -14,8 +13,6 @@ const ViabilidadesTecnicasGam = () => {
           </CCardHeader>
           <CCardBody>
           <section>
-                <IntroViabilidadesGam />
-                <hr />
                 <h3>Viabilidades Técnicas</h3>
                 <p>
                 O Estudo de Viabilidade, no contexto das diretrizes para adoção de Micro-Frontends (GAM), 

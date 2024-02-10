@@ -1,13 +1,19 @@
 
 import ViabilityImg from '../../../assets/images/gam_viabilities_study.png'
 
-import { CCol, CRow } from '@coreui/react';
+import { CCard, CCardBody, CCardHeader, CCol, CRow, CButton } from '@coreui/react';
 import React from 'react';
 
 const IntroViabilidadesGam = () => {
+
   return (
     <CRow>
-      <CCol xs={12}>
+    <CCol xs={12}>
+    <CCard className="mb-4">
+      <CCardHeader>
+        <strong>GAM</strong>
+      </CCardHeader>
+      <CCardBody>
       <section>
                 <h2>Estudo das Viabilidades</h2>
                 <p>
@@ -26,9 +32,20 @@ const IntroViabilidadesGam = () => {
                 </p>
                 
             </section>
-
-      </CCol>
-    </CRow>
+      </CCardBody>
+    </CCard>
+    <CCard>
+      <CCardBody>
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+          <CButton color="primary" className="me-md-2">
+            Voltar
+          </CButton>
+          <CButton color="primary">Avançar</CButton>
+        </div>
+      </CCardBody>
+    </CCard>
+    </CCol>
+  </CRow>
   )
 }
 
