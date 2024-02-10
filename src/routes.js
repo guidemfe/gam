@@ -19,7 +19,7 @@ const ExpansaoManutenibilidadeGam = React.lazy(() => import('./views/gam/expansa
 const ProjetoPilotoGam = React.lazy(() => import('./views/gam/projeto-piloto/ProjetoPilotoGam'))
 
 const routes = [
-  { path: '/', exact: true, name: 'Home' },
+  { path: '/', exact: true, name: 'Home', element: <Navigate to="/microfrontend" /> },
   { path: '/microfrontend', name: 'Micro-frontend', element: IntroducaoMicrofrontend },
   { path: '/gam/introducao', name: 'GAM - Introdução', element: IntroducaoGam },
   
