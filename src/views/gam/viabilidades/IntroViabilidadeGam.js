@@ -10,12 +10,10 @@ const IntroViabilidadesGam = () => {
     <CRow>
     <CCol xs={12}>
     <CCard className="mb-4">
-      <CCardHeader>
-        <strong>GAM</strong>
-      </CCardHeader>
       <CCardBody>
       <section>
-                <h2>Estudo das Viabilidades</h2>
+                <h4>Estudo das Viabilidades</h4>
+                <hr />
                 <p>
                   <div className='mb-4'>
                     A etapa de Estudo da Viabilidade do Guidelines for Adopting Micro-Frontends (GAM) é 

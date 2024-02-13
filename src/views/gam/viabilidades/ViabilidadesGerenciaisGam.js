@@ -8,12 +8,10 @@ const ViabilidadesGerenciaisGam = () => {
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
-          <CCardHeader>
-            <strong>GAM</strong>
-          </CCardHeader>
           <CCardBody>
           <section>
-                <h3>Viabilidades Gerenciais</h3>
+                <h4>Viabilidades Gerenciais</h4>
+                <hr />
                 <p>
                 No contexto da implementação da arquitetura Micro-Frontends, diversas viabilidades gerenciais 
                 se tornam cruciais para o sucesso do projeto. Este documento aborda questões estratégicas, 

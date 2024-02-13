@@ -8,13 +8,10 @@ const ImplementacaoOperacionalGam = () => {
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
-          <CCardHeader>
-            <strong>GAM</strong>
-          </CCardHeader>
           <CCardBody>
             <section>
-              
-              <h3>Decisões Operacionais</h3>
+              <h4>Decisões Operacionais</h4>
+              <hr />
               <p>As decisões operacionais focam nas escolhas estratégicas das áreas de compilação e implantação, compartilhamento de código, otimização de desempenho e a estrutura organizacional. No contexto dos micro-frontends, a tomada de decisões operacionais práticas e bem-informadas é fundamental para assegurar a agilidade, a colaboração eficiente entre equipes e a adaptação contínua às demandas dinâmicas do desenvolvimento de software distribuído.</p>
 
               <h5>Compilação e Implantação</h5>
@@ -38,7 +35,7 @@ const ImplementacaoOperacionalGam = () => {
                   </ul>
                 </li>
 
-                <div className="blue-box"> <strong>Exemplo Prático:</strong> Ao implementar a automação, a equipe decide integrar uma ferramenta CI/CD, como <a href="https://www.jenkins.io/" target="_blank" rel="noreferrer">Jenkins</a>, ao repositório de código-fonte...</div>
+                <div className="blue-box"> <strong>Exemplo Prático: </strong> Ao implementar a automação, a equipe decide integrar uma ferramenta CI/CD, como <a href="https://www.jenkins.io/" target="_blank" rel="noreferrer">Jenkins</a>, ao repositório de código-fonte...</div>
               </ul>
 
               <h5>Compartilhamento de Código</h5>
@@ -51,7 +48,7 @@ const ImplementacaoOperacionalGam = () => {
                     <li>Controle de Versão: Implementar um sistema de controle de versão como git utilizando ferramentas de gestão de pacotes npm ou yarn.</li>
                   </ul>
                 </li>
-                <div className="blue-box"> <strong>Exemplo Prático:</strong> A equipe inicia o processo identificando funcionalidades comuns que podem ser encapsuladas em bibliotecas. Desenvolvem Web Components reutilizáveis para modularidade e reusabilidade, integrando-os ao Design System da organização para garantir consistência visual e de interação. Optam por utilizar <a href="https://git-scm.com/" target="_blank" rel="noreferrer">Git</a> como sistema de controle de versão, combinado com <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer">npm</a> ou <a href="https://yarnpkg.com/" target="_blank" rel="noreferrer">yarn</a> para gerenciamento eficiente de pacotes...</div>
+                <div className="blue-box"> <strong>Exemplo Prático: </strong> A equipe inicia o processo identificando funcionalidades comuns que podem ser encapsuladas em bibliotecas. Desenvolvem Web Components reutilizáveis para modularidade e reusabilidade, integrando-os ao Design System da organização para garantir consistência visual e de interação. Optam por utilizar <a href="https://git-scm.com/" target="_blank" rel="noreferrer">Git</a> como sistema de controle de versão, combinado com <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer">npm</a> ou <a href="https://yarnpkg.com/" target="_blank" rel="noreferrer">yarn</a> para gerenciamento eficiente de pacotes...</div>
               </ul>
 
               <h5>Performance</h5>
@@ -65,7 +62,7 @@ const ImplementacaoOperacionalGam = () => {
                     <li>Cache de Recursos: Implementar estratégias de cache para recursos estáticos e dinâmicos, reduzindo a necessidade de buscar repetidamente os mesmos dados do servidor.</li>
                   </ul>
                 </li>
-                <div className="blue-box"> <strong>Exemplo Prático:</strong> A equipe decide adotar o Lazy Loading para carregar módulos de forma assíncrona, especialmente aqueles que não são essenciais na carga inicial. Implementam o Virtual DOM para otimizar a renderização, garantindo atualizações eficientes. Escolhem o Redux como solução de gestão de estado devido à sua eficiência com micro-frontends. Adicionalmente, estabelecem estratégias de cache usando armazenamento local para recursos estáticos e cache de servidor para dados dinâmicos, promovendo um desempenho eficiente na arquitetura de Micro-Frontends...</div>
+                <div className="blue-box"> <strong>Exemplo Prático: </strong> A equipe decide adotar o Lazy Loading para carregar módulos de forma assíncrona, especialmente aqueles que não são essenciais na carga inicial. Implementam o Virtual DOM para otimizar a renderização, garantindo atualizações eficientes. Escolhem o Redux como solução de gestão de estado devido à sua eficiência com micro-frontends. Adicionalmente, estabelecem estratégias de cache usando armazenamento local para recursos estáticos e cache de servidor para dados dinâmicos, promovendo um desempenho eficiente na arquitetura de Micro-Frontends...</div>
               </ul>
 
               <h5>Estrutura Organizacional</h5>
@@ -79,7 +76,7 @@ const ImplementacaoOperacionalGam = () => {
                     <li>Cultura de DevOps: Cultivar uma cultura de DevOps, integrando desenvolvimento e operações. Isso inclui automação de processos, entrega contínua e monitoramento, garantindo eficiência na implementação e manutenção.</li>
                   </ul>
                 </li>
-                <div className="blue-box"> <strong>Exemplo Prático:</strong> A equipe decide adotar o modelo de Squads, formando equipes dedicadas a diferentes micro-frontends. Escolhem a metodologia Scrum para gerenciar o desenvolvimento, realizando sprints regulares e reuniões de retrospectiva. Utilizam o Teams como plataforma de comunicação para facilitar a colaboração entre as equipes distribuídas. Essas escolhas estruturais contribuem para uma implementação prática e colaborativa de Micro-Frontend.</div>
+                <div className="blue-box"> <strong>Exemplo Prático: </strong> A equipe decide adotar o modelo de Squads, formando equipes dedicadas a diferentes micro-frontends. Escolhem a metodologia Scrum para gerenciar o desenvolvimento, realizando sprints regulares e reuniões de retrospectiva. Utilizam o Teams como plataforma de comunicação para facilitar a colaboração entre as equipes distribuídas. Essas escolhas estruturais contribuem para uma implementação prática e colaborativa de Micro-Frontend.</div>
               </ul>
 
             </section>

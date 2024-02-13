@@ -8,12 +8,10 @@ const ViabilidadesTecnicasGam = () => {
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
-          <CCardHeader>
-            <strong>GAM</strong>
-          </CCardHeader>
           <CCardBody>
           <section>
-                <h3>Viabilidades Técnicas</h3>
+                <h4>Viabilidades Técnicas</h4>
+                <hr />
                 <p>
                 O Estudo de Viabilidade, no contexto das diretrizes para adoção de Micro-Frontends (GAM), 
                 é uma fase estratégica e sequencial que busca analisar as viabilidades gerenciais e técnicas 

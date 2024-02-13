@@ -8,11 +8,10 @@ const IntroducaoMicrofrontend = () => {
     <CRow className="mb-4">
       <CCol xs={12}>
         <CCard className="mb-4">
-          <CCardHeader>
-            <strong>Introdução</strong>
-          </CCardHeader>
+
           <CCardBody>
           <h4>Micro Frontends</h4>
+          <hr />
             <p>Com o tamanho e complexidade do sistema de software, é comum utilizar principalmente uma arquitetura monolítica, uma arquitetura frontend e backend ou uma arquitetura de microsserviços. Para sistemas de software grandes e complexos, a tendência atual é construir um aplicativo de navegador rico em recursos e poderoso, também conhecido como aplicativo de página única (SPA), que se baseia em uma arquitetura de microsserviços.</p>
             <p>Nesse cenário, há equipes separadas para implementações de backend para cada funcionalidade. Elas constroem seus próprios microsserviços de backend para as funcionalidades específicas, e a equipe de frontend precisa trabalhar em relação a todas as características.</p>
             <p>Com o tempo, a camada de frontend, frequentemente desenvolvida por uma equipe separada, cresce e se torna mais difícil de manter. Isso é o que chamamos de um Frontend Monolítico.</p>

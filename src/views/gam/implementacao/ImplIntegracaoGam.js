@@ -11,12 +11,10 @@ const ImplementacaoIntegracaoGam = () => {
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
-          <CCardHeader>
-            <strong>GAM</strong>
-          </CCardHeader>
           <CCardBody>
           <section>
-                <h3>Decisões de Integração</h3>
+                <h4>Decisões de Integração</h4>
+                <hr />
                 <p>
                 A fase de Implementação Prática no Guidelines for Adopting Micro-Frontends (GAM)
                 marca a transição do planejamento teórico para a aplicação concreta da arquitetura de

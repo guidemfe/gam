@@ -8,12 +8,10 @@ const IntroImplemantacaoGam = () => {
     <CRow>
       <CCol xs={12}>
       <CCard className="mb-4">
-        <CCardHeader>
-          <strong>GAM</strong>
-        </CCardHeader>
         <CCardBody>
           <section>
-              <h2>Implementação Prática</h2>
+              <h4>Implementação Prática</h4>
+              <hr />
               <p>
                 <div className='mb-4'>
                 A fase de Implementação Prática no Guidelines for Adopting Micro-Frontends (GAM)

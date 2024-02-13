@@ -10,12 +10,10 @@ const IntroExpansaoGam = () => {
     <CRow>
     <CCol xs={12}>
     <CCard className="mb-4">
-      <CCardHeader>
-        <strong>GAM</strong>
-      </CCardHeader>
       <CCardBody>
       <section>
-                <h2>Expansão</h2>
+                <h4>Expansão</h4>
+                <hr />
                 <p>
                   <div className='mb-4'>
                   Fase de Expansão no Guidelines for Adopting Micro-Frontends (GAM) representa o
