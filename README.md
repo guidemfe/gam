@@ -10,7 +10,7 @@ Bem-vindo ao Guia de Arquitetura Micro-Frontends (GAM), um recurso abrangente pa
 
 Nesta seção, fornecemos uma visão geral sobre a arquitetura de Micro-Frontends, destacando suas vantagens e como ela transforma a abordagem tradicional de desenvolvimento de interfaces de usuário.
 
-## GET START
+## GET STARTED
 
 ### Estudo da Viabilidade
 

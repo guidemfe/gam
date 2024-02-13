@@ -25,7 +25,7 @@ const _nav = [
     component: CNavGroup,
     name: 'Estudo da Viabilidade',
     to: '#',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilBook} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -48,7 +48,7 @@ const _nav = [
     component: CNavGroup,
     name: 'Implementação',
     to: '#',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilSettings} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -71,7 +71,7 @@ const _nav = [
     component: CNavGroup,
     name: 'Expansão',
     to: '/microfrontend',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilLightbulb} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -94,7 +94,7 @@ const _nav = [
     component: CNavItem,
     name: 'Projeto Piloto',
     to: '/projeto-piloto',
-    icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilMonitor} customClassName="nav-icon" />,
   },
 ]
 
