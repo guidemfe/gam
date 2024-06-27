@@ -1,104 +1,105 @@
-# Guia de Arquitetura Micro-Frontends (GAM)
+# Micro-Frontends Architecture Guide (GAM)
 
-## Introdução
+## Introduction
 
-Bem-vindo ao Guia de Arquitetura Micro-Frontends (GAM), um recurso abrangente para orientar o desenvolvimento, implementação e expansão da arquitetura de Micro-Frontends.
+Welcome to the Micro-Frontends Architecture Guide (GAM), a comprehensive resource to guide the development, implementation, and expansion of Micro-Frontends architecture.
 
 ![Big Picture](src/assets/images/gam_big_picture.png)
 
 ## Microfrontend
 
-Nesta seção, fornecemos uma visão geral sobre a arquitetura de Micro-Frontends, destacando suas vantagens e como ela transforma a abordagem tradicional de desenvolvimento de interfaces de usuário.
+In this section, we provide an overview of Micro-Frontends architecture, highlighting its advantages and how it transforms the traditional approach to user interface development.
 
 ## GET STARTED
 
-### Estudo da Viabilidade
+### Feasibility Study
 
-Antes de iniciar a implementação, é crucial realizar um estudo de viabilidade abrangente. Esta seção aborda as seguintes perspectivas:
+Before starting implementation, conducting a comprehensive feasibility study is crucial. This section covers the following perspectives:
 
-- **Viabilidades Técnicas:** Explora os aspectos técnicos relacionados à implementação de Micro-Frontends, incluindo escolhas de tecnologia, integração de ferramentas e requisitos de infraestrutura.
+- **Technical Feasibility:** Explores technical aspects related to Micro-Frontends implementation, including technology choices, tool integration, and infrastructure requirements.
 
-- **Viabilidades Gerenciais:** Destaca questões estratégicas e financeiras, alinhamento com objetivos organizacionais, custos, orçamento, gestão de mudanças e treinamentos.
+- **Managerial Feasibility:** Highlights strategic and financial considerations, alignment with organizational goals, costs, budgeting, change management, and training.
 
-### Implementação
+### Implementation
 
-Esta etapa é dividida em duas subseções:
+This stage is divided into two subsections:
 
-- **Operacional:** Detalha a implementação prática dos Micro-Frontends, incluindo boas práticas de desenvolvimento, estrutura de diretórios, e integração com ferramentas de CI/CD.
+- **Operational:** Details the practical implementation of Micro-Frontends, including development best practices, directory structure, and integration with CI/CD tools.
 
-- **Integração:** Aborda estratégias para integrar eficientemente os Micro-Frontends com sistemas existentes, garantindo uma transição suave e interoperabilidade.
+- **Integration:** Addresses strategies to efficiently integrate Micro-Frontends with existing systems, ensuring a smooth transition and interoperability.
 
-### Expansão
+### Expansion
 
-Ao considerar a expansão da arquitetura, abordamos:
+When considering architecture expansion, we address:
 
-- **Escalabilidade:** Explora estratégias para dimensionar a arquitetura de Micro-Frontends à medida que o projeto cresce, mantendo o desempenho e a eficiência.
+- **Scalability:** Explores strategies to scale the Micro-Frontends architecture as the project grows, maintaining performance and efficiency.
 
-- **Manutenibilidade:** Destaca práticas para garantir que a arquitetura permaneça fácil de manter e evoluir ao longo do tempo.
+- **Maintainability:** Highlights practices to ensure that the architecture remains easy to maintain and evolve over time.
 
-## Projeto Piloto
+## Pilot Project
 
-Finalmente, discutimos a importância de realizar um projeto piloto antes de uma implantação completa. Isso permite testar a arquitetura em um ambiente controlado, identificar desafios específicos e aprimorar a estratégia geral.
+Finally, we discuss the importance of conducting a pilot project before full deployment. This allows testing the architecture in a controlled environment, identifying specific challenges, and refining the overall strategy.
 
-## Como Usar Este Guia
+## How to Use This Guide
 
-1. Explore as seções relevantes para compreender diferentes aspectos da arquitetura de Micro-Frontends.
+1. Explore relevant sections to understand different aspects of Micro-Frontends architecture.
 
-2. Siga as recomendações práticas e exemplos para uma implementação bem-sucedida.
+2. Follow practical recommendations and examples for successful implementation.
 
-3. Contribua com feedback, sugestões ou melhorias abrindo issues ou enviando pull requests.
+3. Contribute feedback, suggestions, or improvements by opening issues or submitting pull requests.
 
-## Licença
+## License
 
-Este guia é distribuído sob a licença [MIT](LICENSE).
-
+This guide is distributed under the [MIT License](LICENSE).
 
 ### Installation
 
-``` bash
+bash
 $ npm install
-```
+
+
 
 or
 
-``` bash
+bash
 $ yarn install
-```
+
+
 
 ### Basic usage
 
-``` bash
+bash
 # dev server with hot reload at http://localhost:3000
-$ npm start 
-```
+$ npm start
+
+
 
 or 
 
-``` bash
+bash
 # dev server with hot reload at http://localhost:3000
 $ yarn start
-```
+
+
 
 Navigate to [http://localhost:3000](http://localhost:3000). The app will automatically reload if you change any of the source files.
 
 #### Build
 
-Run `build` to build the project. The build artifacts will be stored in the `build/` directory.
+Run build to build the project. The build artifacts will be stored in the build/ directory.
 
-```bash
+bash
 # build for production with minification
 $ npm run build
-```
+
+
 
 or
 
-```bash
+bash
 # build for production with minification
 $ yarn build
-```
 
-## Licença
+##License
 
-Este guia é distribuído sob a licença [MIT](LICENSE).
-
-
+This guide is distributed under the [MIT](LICENSE).
