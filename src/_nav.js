@@ -1,31 +1,32 @@
 import { cilDescription, cilPuzzle, cilSpeedometer } from '@coreui/icons';
 import CIcon from '@coreui/icons-react';
-import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react';
+import { CNavGroup, CNavItem, CNavTitle, CBadge } from '@coreui/react';
 import React from 'react';
+import BadgeForViabilidadesTecnicas from './views/gam/viabilidades/BadgeForViabilidadesTecnicas'; // Importe o componente BadgeForViabilidadesTecnicas
 
 const _nav = [
   {
     component: CNavItem,
     name: 'Introdução',
     to: '/gam/introducao',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-   },
+  },
   {
     component: CNavItem,
     name: 'Micro-Frontend',
     to: '/microfrontend',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
   {
     component: CNavTitle,
     name: 'Get Start',
   },
-
   {
     component: CNavGroup,
-    name: 'Estudo da Viabilidade',
+    name: (
+      <>
+        Estudo da Viabilidade 
+      </>
+    ),
     to: '#',
-    icon: <CIcon icon={cilBook} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -48,7 +49,6 @@ const _nav = [
     component: CNavGroup,
     name: 'Implementação',
     to: '#',
-    icon: <CIcon icon={cilSettings} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -71,7 +71,6 @@ const _nav = [
     component: CNavGroup,
     name: 'Expansão',
     to: '/microfrontend',
-    icon: <CIcon icon={cilLightbulb} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -94,8 +93,7 @@ const _nav = [
     component: CNavItem,
     name: 'Projeto Piloto',
     to: '/projeto-piloto',
-    icon: <CIcon icon={cilMonitor} customClassName="nav-icon" />,
   },
-]
+];
 
-export default _nav
+export default _nav;
