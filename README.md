@@ -1,8 +1,8 @@
-# Micro-Frontends Architecture Guide (GAM)
+# Guidelines for Adoption Micro-frontend (GAM)
 
 ## Introduction
 
-Welcome to the Micro-Frontends Architecture Guide (GAM), a comprehensive resource to guide the development, implementation, and expansion of Micro-Frontends architecture.
+Welcome to the Guidelines for Adoption Micro-frontend (GAM), a comprehensive resource to guide the development, implementation, and expansion of Micro-Frontends architecture.
 
 ![Big Picture](src/assets/images/gam_big_picture.png)
 
@@ -69,7 +69,7 @@ $ yarn install
 ### Basic usage
 
 bash
-# dev server with hot reload at http://localhost:3000
+#### dev server with hot reload at http://localhost:3000
 $ npm start
 
 
@@ -89,15 +89,14 @@ Navigate to [http://localhost:3000](http://localhost:3000). The app will automat
 Run build to build the project. The build artifacts will be stored in the build/ directory.
 
 bash
-# build for production with minification
+#### build for production with minification
 $ npm run build
-
 
 
 or
 
 bash
-# build for production with minification
+#### build for production with minification
 $ yarn build
 
 ##License
