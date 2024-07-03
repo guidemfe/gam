@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { CButton, CCard, CCardBody, CCol, CRow } from '@coreui/react';
+import { CCard, CCardBody, CCol, CRow } from '@coreui/react';
 import { Tabs, Tab, Alert } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { Button, Modal } from 'react-bootstrap';
+import '../../../scss/_custom.scss'; 
 
 const TOTAL_ITEMS = 11;
 
@@ -57,37 +57,36 @@ const ViabilidadesTecnicasGam = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-          <h4>Viabilidades Técnicas</h4>
-              <hr />
-              <div>
-                <Alert variant="success">
-                  Percentual de opções selecionadas: {localStorage.getItem('selectedPercentage') || '0.0'}%
-                </Alert>
-              </div>
-              <p>
-                O Estudo de Viabilidade, no contexto das diretrizes para adoção de Micro-Frontends (GAM), 
-                é uma fase estratégica e sequencial que busca analisar as viabilidades gerenciais e técnicas 
-                antes de decidir pela implementação da arquitetura de Micro-Frontends. 
-                Essa abordagem visa garantir uma transição suave e bem-sucedida para essa arquitetura inovadora. A imagem abaixo demostra o fluxo
-                de atividades do Estudo de Viabilidade.
-              </p>
-              </CCardBody>
-              </CCard>
+            <h4>Viabilidades Técnicas</h4>
+            <hr />
+            <div>
+              <Alert variant="success">
+                Percentual de opções selecionadas: {localStorage.getItem('selectedPercentage') || '0.0'}%
+              </Alert>
+            </div>
+            <p>
+              O Estudo de Viabilidade, no contexto das diretrizes para adoção de Micro-Frontends (GAM), 
+              é uma fase estratégica e sequencial que busca analisar as viabilidades gerenciais e técnicas 
+              antes de decidir pela implementação da arquitetura de Micro-Frontends. 
+              Essa abordagem visa garantir uma transição suave e bem-sucedida para essa arquitetura inovadora. A imagem abaixo demostra o fluxo
+              de atividades do Estudo de Viabilidade.
+            </p>
+          </CCardBody>
+        </CCard>
         <CCard className="mb-4">
           <CCardBody>
             <section>
-
               <Tabs defaultActiveKey="compatibility" id="technical-feasibilities-tabs" className="mb-3">
                 <Tab eventKey="compatibility" title="Compatibilidade Tecnológica">
-                  <ul>
+                  <ul className="no-bullets">
                     <li>
                       <em>Objetivo:</em> Garantir que a arquitetura de Micro-Frontends seja compatível com as tecnologias existentes na infraestrutura da empresa, minimizando conflitos e promovendo uma transição suave.
                     </li>
                     <li><em>Recomendações:</em></li>
-                    <ul>
+                    <ul className="no-bullets">
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="Avaliação da Infraestrutura Atual"
                             checked={checkedItems['Avaliação da Infraestrutura Atual'] || false}
@@ -97,8 +96,8 @@ const ViabilidadesTecnicasGam = () => {
                         </label>
                       </div>
                       <div>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Identificação de Conflitos Potenciais"
                             checked={checkedItems['Identificação de Conflitos Potenciais'] || false}
@@ -108,8 +107,8 @@ const ViabilidadesTecnicasGam = () => {
                         </label>
                       </div>
                       <div>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Padronização de Tecnologias"
                             checked={checkedItems['Padronização de Tecnologias'] || false}
@@ -119,8 +118,8 @@ const ViabilidadesTecnicasGam = () => {
                         </label>
                       </div>
                       <div>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Testes de Compatibilidade"
                             checked={checkedItems['Testes de Compatibilidade'] || false}
@@ -131,43 +130,22 @@ const ViabilidadesTecnicasGam = () => {
                       </div>
                     </ul>
                   </ul>
-
                   <div>
-                  <Button variant="primary" onClick={handleModalToggle}>
-                    Exemplo Prático
-                  </Button>
-
-                  <Modal show={showModal} onHide={handleModalToggle}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Exemplo Prático</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      <div className="blue-box">
-                      Suponha que a empresa utilize o Angular como framework principal em seus sistemas existentes. Ao iniciar a adoção de Micro-Frontends, a equipe de análise de compatibilidade avalia a versão específica do Angular em uso e confirma sua compatibilidade com os requisitos do Micro-Frontend. Além disso, ao identificar a necessidade de uma biblioteca de gerenciamento de estado, a equipe opta por padronizar o uso do Redux, que é amplamente aceito tanto na infraestrutura atual quanto na arquitetura de Micro-Frontends. Durante o projeto piloto, são conduzidos testes específicos para verificar a interoperabilidade entre os Micro-Frontends e os serviços legados, garantindo uma transição suave e minimizando conflitos.
-                      </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleModalToggle}>
-                        Fechar
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                </div>
-
-
-
-
+                    <div className="blue-box">
+                      <strong>Exemplo Prático:</strong> Suponha que a empresa utilize o Angular como framework principal em seus sistemas existentes. Ao iniciar a adoção de Micro-Frontends, a equipe de análise de compatibilidade avalia a versão específica do Angular em uso e confirma sua compatibilidade com os requisitos do Micro-Frontend. Além disso, ao identificar a necessidade de uma biblioteca de gerenciamento de estado, a equipe opta por padronizar o uso do Redux, que é amplamente aceito tanto na infraestrutura atual quanto na arquitetura de Micro-Frontends. Durante o projeto piloto, são conduzidos testes específicos para verificar a interoperabilidade entre os Micro-Frontends e os serviços legados, garantindo uma transição suave e minimizando conflitos.
+                    </div>
+                  </div>
                 </Tab>
                 <Tab eventKey="integration" title="Desafios de Integração">
-                  <ul>
+                  <ul className="no-bullets">
                     <li>
                       <em>Objetivo:</em> Identificar e abordar proativamente os desafios de integração que possam surgir durante a adoção da arquitetura de Micro-Frontends.
                     </li>
                     <li><em>Recomendações:</em></li>
-                    <ul>
+                    <ul className="no-bullets">
                       <li>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Mapeamento de Interfaces"
                             checked={checkedItems['Mapeamento de Interfaces'] || false}
@@ -177,8 +155,8 @@ const ViabilidadesTecnicasGam = () => {
                         </label>
                       </li>
                       <li>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Definição de Contratos"
                             checked={checkedItems['Definição de Contratos'] || false}
@@ -188,8 +166,8 @@ const ViabilidadesTecnicasGam = () => {
                         </label>
                       </li>
                       <li>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Monitoramento Contínuo"
                             checked={checkedItems['Monitoramento Contínuo'] || false}
@@ -205,15 +183,15 @@ const ViabilidadesTecnicasGam = () => {
                   </div>
                 </Tab>
                 <Tab eventKey="functional-complexities" title="Complexidades Funcionais">
-                  <ul>
+                  <ul className="no-bullets">
                     <li>
                       <em>Objetivo:</em> Entender e mitigar as complexidades funcionais associadas à arquitetura de Micro-Frontends, garantindo a entrega de funcionalidades de forma eficiente.
                     </li>
                     <li><em>Recomendações:</em></li>
-                    <ul>
+                    <ul className="no-bullets">
                       <li>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Análise de Requisitos"
                             checked={checkedItems['Análise de Requisitos'] || false}
@@ -223,8 +201,8 @@ const ViabilidadesTecnicasGam = () => {
                         </label>
                       </li>
                       <li>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Design Modular"
                             checked={checkedItems['Design Modular'] || false}
@@ -234,8 +212,8 @@ const ViabilidadesTecnicasGam = () => {
                         </label>
                       </li>
                       <li>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Testes Unitários e de Integração"
                             checked={checkedItems['Testes Unitários e de Integração'] || false}
@@ -245,8 +223,8 @@ const ViabilidadesTecnicasGam = () => {
                         </label>
                       </li>
                       <li>
-                        <label>
-                          <input
+                        <label className='ml-2'>
+                          <input className='input-label'
                             type="checkbox"
                             name="Documentação Clara"
                             checked={checkedItems['Documentação Clara'] || false}
@@ -258,26 +236,10 @@ const ViabilidadesTecnicasGam = () => {
                     </ul>
                   </ul>
                   <div>
-                  <Button variant="primary" onClick={handleModalToggle}>
-                    Exemplo Prático
-                  </Button>
-
-                  <Modal show={showModal} onHide={handleModalToggle}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Exemplo Prático</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      <div className="blue-box">
-                        <strong>Exemplo Prático:</strong> Durante a análise de requisitos foi identificado um requisito funcional complexo relacionado à gestão de permissões de usuários em diferentes Micro-Frontends. Ao adotar um design modular, a equipe decide criar um Micro-Frontend dedicado exclusivamente à gestão de permissões. Testes unitários e de integração são implementados para garantir que essa funcionalidade se integre sem problemas aos demais Micro-Frontends. A documentação clara detalha os fluxos de interação, simplificando a compreensão da complexidade funcional pela equipe.
-                      </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleModalToggle}>
-                        Fechar
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                </div>
+                    <div className="blue-box">
+                      <strong>Exemplo Prático:</strong> Durante a análise de requisitos foi identificado um requisito funcional complexo relacionado à gestão de permissões de usuários em diferentes Micro-Frontends. Ao adotar um design modular, a equipe decide criar um Micro-Frontend dedicado exclusivamente à gestão de permissões. Testes unitários e de integração são implementados para garantir que essa funcionalidade se integre sem problemas aos demais Micro-Frontends. A documentação clara detalha os fluxos de interação, simplificando a compreensão da complexidade funcional pela equipe.
+                    </div>
+                  </div>
                 </Tab>
               </Tabs>
             </section>

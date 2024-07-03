@@ -55,7 +55,6 @@ const ViabilidadesGerenciaisGam = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-            <section>
               <h4>Viabilidades Gerenciais</h4>
               <hr />
               <div>
@@ -73,16 +72,20 @@ const ViabilidadesGerenciaisGam = () => {
                 Cada tópico destaca recomendações práticas e exemplos, 
                 proporcionando insights valiosos para líderes e equipes envolvidas na transição para a arquitetura de Micro-Frontends.
               </p>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardBody>
+            <section>
               <Tabs defaultActiveKey="alignment" id="managerial-feasibilities-tabs" className="mb-3">
                 <Tab eventKey="alignment" title="Alinhamento aos Objetivos Estratégicos">
-                  <h5>Alinhamento aos Objetivos Estratégicos</h5>
                   <ul>
-                    <li><strong>Objetivo:</strong> Assegurar que a implementação da arquitetura Micro-frontend esteja alinhada aos objetivos estratégicos da organização.</li>
-                    <li><strong>Recomendações:</strong></li>
+                    <li>Objetivo: Assegurar que a implementação da arquitetura Micro-frontend esteja alinhada aos objetivos estratégicos da organização.</li>
+                    <li>Recomendações:</li>
                     <ul>
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="Análise de Impacto na Gestão"
                             checked={checkedItemsVB['Análise de Impacto na Gestão'] || false}
@@ -93,7 +96,7 @@ const ViabilidadesGerenciaisGam = () => {
                       </div>
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="Mapeamento de Benefícios"
                             checked={checkedItemsVB['Mapeamento de Benefícios'] || false}
@@ -104,7 +107,7 @@ const ViabilidadesGerenciaisGam = () => {
                       </div>
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="Ajustes de Metas Estratégicas"
                             checked={checkedItemsVB['Ajustes de Metas Estratégicas'] || false}
@@ -124,14 +127,13 @@ const ViabilidadesGerenciaisGam = () => {
                   </ul>
                 </Tab>
                 <Tab eventKey="costs" title="Custos e Orçamento">
-                  <h5>Custos e Orçamento</h5>
                   <ul>
-                    <li><strong>Objetivo:</strong> Avaliar os impactos financeiros relacionados à adoção da arquitetura de micro-frontends no contexto do GAM, identificando custos associados e garantindo uma gestão orçamentária eficaz.</li>
-                    <li><strong>Recomendações:</strong></li>
+                    <li>Objetivo: Avaliar os impactos financeiros relacionados à adoção da arquitetura de micro-frontends no contexto do GAM, identificando custos associados e garantindo uma gestão orçamentária eficaz.</li>
+                    <li>Recomendações:</li>
                     <ul>
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="Levantamento Detalhado de Custos"
                             checked={checkedItemsVB['Levantamento Detalhado de Custos'] || false}
@@ -142,7 +144,7 @@ const ViabilidadesGerenciaisGam = () => {
                       </div>
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="Orçamento Flexível"
                             checked={checkedItemsVB['Orçamento Flexível'] || false}
@@ -153,7 +155,7 @@ const ViabilidadesGerenciaisGam = () => {
                       </div>
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="roi"
                             checked={checkedItemsVB['roi'] || false}
@@ -175,14 +177,13 @@ const ViabilidadesGerenciaisGam = () => {
                   </ul>
                 </Tab>
                 <Tab eventKey="change-management" title="Gestão de Mudanças e Treinamentos">
-                  <h5>Gestão de Mudanças e Treinamentos</h5>
                   <ul>
-                    <li><strong>Objetivo:</strong> Avaliar a capacidade da organização em lidar com as mudanças que a adoção da arquitetura de Micro-Frontends pode trazer. Busca-se identificar os impactos nos processos, na cultura organizacional e na estrutura de equipe, além de preparar a equipe para a transição.</li>
-                    <li><strong>Recomendações:</strong></li>
+                    <li>Objetivo: Avaliar a capacidade da organização em lidar com as mudanças que a adoção da arquitetura de Micro-Frontends pode trazer. Busca-se identificar os impactos nos processos, na cultura organizacional e na estrutura de equipe, além de preparar a equipe para a transição.</li>
+                    <li>Recomendações:</li>
                     <ul>
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="Comunicação Efetiva"
                             checked={checkedItemsVB['Comunicação Efetiva'] || false}
@@ -193,7 +194,7 @@ const ViabilidadesGerenciaisGam = () => {
                       </div>
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="Treinamento Personalizado"
                             checked={checkedItemsVB['Treinamento Personalizado'] || false}
@@ -204,7 +205,7 @@ const ViabilidadesGerenciaisGam = () => {
                       </div>
                       <div>
                         <label className='ml-2'>
-                          <input
+                          <input className='input-label'
                             type="checkbox"
                             name="Definir Marcos e Métricas"
                             checked={checkedItemsVB['Definir Marcos e Métricas'] || false}
@@ -229,16 +230,6 @@ const ViabilidadesGerenciaisGam = () => {
                 </Tab>
               </Tabs>
             </section>
-          </CCardBody>
-        </CCard>
-        <CCard>
-          <CCardBody>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-              <CButton color="primary" className="me-md-2">
-                Voltar
-              </CButton>
-              <CButton color="primary">Avançar</CButton>
-            </div>
           </CCardBody>
         </CCard>
       </CCol>
