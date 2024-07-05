@@ -2,7 +2,7 @@ import { cilDescription, cilPuzzle, cilSpeedometer } from '@coreui/icons';
 import CIcon from '@coreui/icons-react';
 import { CNavGroup, CNavItem, CNavTitle, CBadge } from '@coreui/react';
 import React from 'react';
-import BadgeForViabilidadesTecnicas from './views/gam/viabilidades/BadgeForViabilidadesTecnicas'; // Importe o componente BadgeForViabilidadesTecnicas
+import BadgeForViabilidadesTecnicas from './views/gam/viabilities/BadgeForViabilidadesTecnicas'; // Importe o componente BadgeForViabilidadesTecnicas
 
 const _nav = [
   {

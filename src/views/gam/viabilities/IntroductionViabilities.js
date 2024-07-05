@@ -1,10 +1,10 @@
 
 import ViabilityImg from '../../../assets/images/gam_viabilities_study.png'
 
-import { CCard, CCardBody, CCardHeader, CCol, CRow, CButton } from '@coreui/react';
+import { CCard, CCardBody, CCol, CRow, CButton } from '@coreui/react';
 import React from 'react';
 
-const IntroViabilidadesGam = () => {
+const IntroductionViabilities = () => {
 
   return (
     <CRow>
@@ -47,4 +47,4 @@ const IntroViabilidadesGam = () => {
   )
 }
 
-export default IntroViabilidadesGam
+export default IntroductionViabilities

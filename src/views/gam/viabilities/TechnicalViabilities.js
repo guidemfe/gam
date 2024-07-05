@@ -6,22 +6,19 @@ import '../../../scss/_custom.scss';
 
 const TOTAL_ITEMS = 11;
 
-const ViabilidadesTecnicasGam = () => {
-  const [checkedItems, setCheckedItems] = useState({});
+const TechnicalViabilities = () => {
+  const [technicalViabilities, setCheckedItems] = useState({});
   const [showMessage, setShowMessage] = useState(false);
-  const [selectedPercentage, setSelectedPercentageState] = useState(0);
+  const [technicalPercentage, setSelectedPercentageState] = useState(0);
   const dispatch = useDispatch();
 
-  const [showModal, setShowModal] = useState(false);
-  const handleModalToggle = () => setShowModal(!showModal);
-
   useEffect(() => {
-    const savedItems = localStorage.getItem('checkedItems');
+    const savedItems = localStorage.getItem('technicalViabilities');
     if (savedItems) {
       setCheckedItems(JSON.parse(savedItems));
     }
 
-    const savedPercentage = localStorage.getItem('selectedPercentage');
+    const savedPercentage = localStorage.getItem('technicalPercentage');
     if (savedPercentage) {
       setSelectedPercentageState(parseFloat(savedPercentage));
     }
@@ -35,22 +32,22 @@ const ViabilidadesTecnicasGam = () => {
         ...prevCheckedItems,
         [itemName]: isChecked,
       };
-      localStorage.setItem('checkedItems', JSON.stringify(updatedCheckedItems));
+      localStorage.setItem('technicalViabilities', JSON.stringify(updatedCheckedItems));
       return updatedCheckedItems;
     });
   };
 
   useEffect(() => {
-    const selectedOptions = Object.values(checkedItems).filter((value) => value).length;
+    const selectedOptions = Object.values(technicalViabilities).filter((value) => value).length;
     const percentage = (selectedOptions / TOTAL_ITEMS) * 100;
     if (TOTAL_ITEMS > 0) {
       setSelectedPercentageState(percentage.toFixed(1));
-      dispatch({ type: 'SET_SELECTED_PERCENTAGE', payload: percentage.toFixed(1) });
-      localStorage.setItem('selectedPercentage', percentage.toFixed(1));
+      dispatch({ type: 'SET_TECHNICAL_PERCENTAGE', payload: percentage.toFixed(1) });
+      localStorage.setItem('technicalPercentage', percentage.toFixed(1));
     }
 
     setShowMessage(percentage === 100);
-  }, [checkedItems, dispatch]);
+  }, [technicalViabilities, dispatch]);
 
   return (
     <CRow>
@@ -61,7 +58,7 @@ const ViabilidadesTecnicasGam = () => {
             <hr />
             <div>
               <Alert variant="success">
-                Percentual de opções selecionadas: {localStorage.getItem('selectedPercentage') || '0.0'}%
+                Percentual de opções selecionadas: {localStorage.getItem('technicalPercentage') || '0.0'}%
               </Alert>
             </div>
             <p>
@@ -89,7 +86,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Avaliação da Infraestrutura Atual"
-                            checked={checkedItems['Avaliação da Infraestrutura Atual'] || false}
+                            checked={technicalViabilities['Avaliação da Infraestrutura Atual'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Avaliação da Infraestrutura Atual: Realizar uma análise detalhada da infraestrutura tecnológica existente, identificando as tecnologias, frameworks e bibliotecas em uso.
@@ -100,7 +97,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Identificação de Conflitos Potenciais"
-                            checked={checkedItems['Identificação de Conflitos Potenciais'] || false}
+                            checked={technicalViabilities['Identificação de Conflitos Potenciais'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Identificação de Conflitos Potenciais: Identificar possíveis conflitos entre as tecnologias utilizadas atualmente e aquelas associadas à arquitetura de Micro-Frontends.
@@ -111,7 +108,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Padronização de Tecnologias"
-                            checked={checkedItems['Padronização de Tecnologias'] || false}
+                            checked={technicalViabilities['Padronização de Tecnologias'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Padronização de Tecnologias: Considerar a padronização de tecnologias que são comuns tanto na infraestrutura atual quanto na arquitetura de Micro-Frontends para facilitar a integração.
@@ -122,7 +119,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Testes de Compatibilidade"
-                            checked={checkedItems['Testes de Compatibilidade'] || false}
+                            checked={technicalViabilities['Testes de Compatibilidade'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Testes de Compatibilidade: Implementar testes específicos usando o projeto piloto para verificar a compatibilidade entre os componentes de Micro-Frontends e a infraestrutura existente.
@@ -148,7 +145,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Mapeamento de Interfaces"
-                            checked={checkedItems['Mapeamento de Interfaces'] || false}
+                            checked={technicalViabilities['Mapeamento de Interfaces'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Mapeamento de Interfaces: Realizar um mapeamento claro das interfaces entre os Micro-Frontends e outros componentes do sistema.
@@ -159,7 +156,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Definição de Contratos"
-                            checked={checkedItems['Definição de Contratos'] || false}
+                            checked={technicalViabilities['Definição de Contratos'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Definição de Contratos: Estabelecer contratos claros e documentados entre os Micro-Frontends e os serviços backend, garantindo consistência nas interações.
@@ -170,7 +167,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Monitoramento Contínuo"
-                            checked={checkedItems['Monitoramento Contínuo'] || false}
+                            checked={technicalViabilities['Monitoramento Contínuo'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Monitoramento Contínuo: Implemente mecanismos de monitoramento contínuo para identificar e resolver rapidamente problemas de integração.
@@ -194,7 +191,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Análise de Requisitos"
-                            checked={checkedItems['Análise de Requisitos'] || false}
+                            checked={technicalViabilities['Análise de Requisitos'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Análise de Requisitos: Realizar uma análise aprofundada dos requisitos funcionais da aplicação, identificando possíveis complexidades.
@@ -205,7 +202,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Design Modular"
-                            checked={checkedItems['Design Modular'] || false}
+                            checked={technicalViabilities['Design Modular'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Design Modular: Adote um design modular para os Micro-Frontends, dividindo a aplicação em componentes independentes para facilitar o gerenciamento das complexidades.
@@ -216,7 +213,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Testes Unitários e de Integração"
-                            checked={checkedItems['Testes Unitários e de Integração'] || false}
+                            checked={technicalViabilities['Testes Unitários e de Integração'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Testes Unitários e de Integração: Implementar testes unitários e de integração para validar a funcionalidade dos Micro-Frontends individualmente e em conjunto.
@@ -227,7 +224,7 @@ const ViabilidadesTecnicasGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Documentação Clara"
-                            checked={checkedItems['Documentação Clara'] || false}
+                            checked={technicalViabilities['Documentação Clara'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Documentação Clara: Mantenha uma documentação clara e abrangente que descreva as interações funcionais entre os Micro-Frontends e outros componentes.
@@ -250,4 +247,4 @@ const ViabilidadesTecnicasGam = () => {
   );
 };
 
-export default ViabilidadesTecnicasGam;
+export default TechnicalViabilities;

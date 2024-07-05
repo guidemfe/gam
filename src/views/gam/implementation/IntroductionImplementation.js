@@ -1,9 +1,9 @@
 
 import ImplImg from '../../../assets/images/gam_pratical_implementation.png'
-import { CCard, CCardBody, CCardHeader, CCol, CRow, CButton } from '@coreui/react';
+import { CCard, CCardBody, CCol, CRow, CButton } from '@coreui/react';
 import React from 'react';
 
-const IntroImplemantacaoGam = () => {
+const IntroductionImplementation = () => {
   return (
     <CRow>
       <CCol xs={12}>
@@ -46,4 +46,4 @@ const IntroImplemantacaoGam = () => {
   )
 }
 
-export default IntroImplemantacaoGam
+export default IntroductionImplementation

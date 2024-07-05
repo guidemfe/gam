@@ -7,19 +7,19 @@ import '../../../scss/_custom.scss';
 
 const TOTAL_ITEMS = 9;
 
-const ViabilidadesGerenciaisGam = () => {
-  const [checkedItemsVB, setCheckedItems] = useState({});
+const ManagerialViabilities = () => {
+  const [managerialViabilities, setCheckedItems] = useState({});
   const [showMessage, setShowMessage] = useState(false);
-  const [selectedPercentage, setSelectedPercentageState] = useState(0);
+  const [managerialPercentage, setSelectedPercentageState] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const savedItems = localStorage.getItem('checkedItemsVB');
+    const savedItems = localStorage.getItem('managerialViabilities');
     if (savedItems) {
       setCheckedItems(JSON.parse(savedItems));
     }
 
-    const savedPercentage = localStorage.getItem('selectedPercentage');
+    const savedPercentage = localStorage.getItem('managerialPercentage');
     if (savedPercentage) {
       setSelectedPercentageState(parseFloat(savedPercentage));
     }
@@ -29,26 +29,26 @@ const ViabilidadesGerenciaisGam = () => {
     const itemName = event.target.name;
     const isChecked = event.target.checked;
     setCheckedItems((prevCheckedItems) => {
-      const checkedItemsManagerialFeasibility = {
+      const checkedItemsManagerialViabilities = {
         ...prevCheckedItems,
         [itemName]: isChecked,
       };
-      localStorage.setItem('checkedItemsManagerialFeasibility', JSON.stringify(checkedItemsManagerialFeasibility));
-      return checkedItemsManagerialFeasibility;
+      localStorage.setItem('managerialViabilities', JSON.stringify(checkedItemsManagerialViabilities));
+      return checkedItemsManagerialViabilities;
     });
   };
 
   useEffect(() => {
-    const selectedOptions = Object.values(checkedItemsVB).filter((value) => value).length;
+    const selectedOptions = Object.values(managerialViabilities).filter((value) => value).length;
     const percentage = (selectedOptions / TOTAL_ITEMS) * 100;
     if (TOTAL_ITEMS > 0) {
       setSelectedPercentageState(percentage.toFixed(1));
-      dispatch({ type: 'SET_SELECTED_PERCENTAGE', payload: percentage.toFixed(1) });
-      localStorage.setItem('selectedPercentage', percentage.toFixed(1));
+      dispatch({ type: 'SET_MANAGERIAL_PERCENTAGE', payload: percentage.toFixed(1) });
+      localStorage.setItem('managerialPercentage', percentage.toFixed(1));
     }
 
     setShowMessage(percentage === 100);
-  }, [checkedItemsVB, dispatch]);
+  }, [managerialViabilities, dispatch]);
 
   return (
     <CRow>
@@ -59,7 +59,7 @@ const ViabilidadesGerenciaisGam = () => {
               <hr />
               <div>
                 <Alert variant="success">
-                  Percentual de opções selecionadas: {localStorage.getItem('selectedPercentage') || '0.0'}%
+                  Percentual de opções selecionadas: {localStorage.getItem('managerialPercentage') || '0.0'}%
                 </Alert>
               </div>
               <hr />
@@ -88,7 +88,7 @@ const ViabilidadesGerenciaisGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Análise de Impacto na Gestão"
-                            checked={checkedItemsVB['Análise de Impacto na Gestão'] || false}
+                            checked={managerialViabilities['Análise de Impacto na Gestão'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Análise de Impacto na Gestão: Realizar uma análise do impacto da introdução de micro-frontends de forma progressiva nos objetivos estratégicos da gestão. Avaliar a viabilidade de alinhamento gradual, sem forçar uma transição imediata.
@@ -99,7 +99,7 @@ const ViabilidadesGerenciaisGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Mapeamento de Benefícios"
-                            checked={checkedItemsVB['Mapeamento de Benefícios'] || false}
+                            checked={managerialViabilities['Mapeamento de Benefícios'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Mapeamento de Benefícios: Identificar os benefícios potenciais da adoção gradual de micro-frontends para os objetivos estratégicos da empresa, priorizando a harmonização com as metas existentes.
@@ -110,7 +110,7 @@ const ViabilidadesGerenciaisGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Ajustes de Metas Estratégicas"
-                            checked={checkedItemsVB['Ajustes de Metas Estratégicas'] || false}
+                            checked={managerialViabilities['Ajustes de Metas Estratégicas'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Ajustes de Metas Estratégicas: Analisar a necessidade de ajustar ou realinhar as metas estratégicas para otimizar a adoção do micro-frontends, assegurando que estejam alinhadas com a visão a longo prazo da organização.
@@ -136,7 +136,7 @@ const ViabilidadesGerenciaisGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Levantamento Detalhado de Custos"
-                            checked={checkedItemsVB['Levantamento Detalhado de Custos'] || false}
+                            checked={managerialViabilities['Levantamento Detalhado de Custos'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Levantamento Detalhado de Custos: Realizar um levantamento dos custos associados à implementação de micro-frontends. Incluir despesas relacionadas ao treinamento da equipe, possíveis atualizações de infraestrutura e aquisição de ferramentas específicas.
@@ -147,7 +147,7 @@ const ViabilidadesGerenciaisGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Orçamento Flexível"
-                            checked={checkedItemsVB['Orçamento Flexível'] || false}
+                            checked={managerialViabilities['Orçamento Flexível'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Orçamento Flexível: Estabelecer um orçamento flexível que permita adaptações conforme a evolução do projeto de adoção de micro-frontends. Incorporar uma margem para imprevistos e ajustes durante as fases iniciais da implementação.
@@ -158,7 +158,7 @@ const ViabilidadesGerenciaisGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="roi"
-                            checked={checkedItemsVB['roi'] || false}
+                            checked={managerialViabilities['roi'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Avaliação de Retorno sobre Investimento (ROI): Desenvolver métricas para avaliação do retorno sobre o investimento. Monitorar indicadores-chave para garantir que os benefícios esperados estejam alinhados aos recursos financeiros empregados.
@@ -186,7 +186,7 @@ const ViabilidadesGerenciaisGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Comunicação Efetiva"
-                            checked={checkedItemsVB['Comunicação Efetiva'] || false}
+                            checked={managerialViabilities['Comunicação Efetiva'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Comunicação Efetiva: Estabelecer um plano de comunicação claro e aberto para informar os membros da equipe sobre as mudanças planejadas. Comunique os benefícios da nova arquitetura, destacando como ela contribuirá para os objetivos estratégicos da empresa.
@@ -197,7 +197,7 @@ const ViabilidadesGerenciaisGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Treinamento Personalizado"
-                            checked={checkedItemsVB['Treinamento Personalizado'] || false}
+                            checked={managerialViabilities['Treinamento Personalizado'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Treinamento Personalizado: Desenvolva programas de treinamento específicos para as equipes que lidarão diretamente com os Micro-Frontends. Certifique-se de que os membros da equipe tenham as habilidades necessárias para trabalhar eficientemente com a nova arquitetura.
@@ -208,7 +208,7 @@ const ViabilidadesGerenciaisGam = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Definir Marcos e Métricas"
-                            checked={checkedItemsVB['Definir Marcos e Métricas'] || false}
+                            checked={managerialViabilities['Definir Marcos e Métricas'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Definir Marcos e Métricas: Estabelecer marcos claros e métricas mensuráveis para avaliar o progresso durante a transição. Definir indicadores de sucesso ajudará a monitorar a eficácia das estratégias de gerenciamento de mudanças e identificar áreas que precisam de ajustes.
@@ -237,4 +237,4 @@ const ViabilidadesGerenciaisGam = () => {
   );
 }
 
-export default ViabilidadesGerenciaisGam;
+export default ManagerialViabilities;

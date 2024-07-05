@@ -4,13 +4,13 @@ import React from 'react'
 const IntroducaoMicrofrontend = React.lazy(() => import('./views/microfrontend/IntroducaoMicrofrontend'))
 const IntroducaoGam = React.lazy(() => import('./views/gam/IntroducaoGam'))
 
-const IntroViabilidadesGam = React.lazy(() => import('./views/gam/viabilidades/IntroViabilidadeGam'))
-const ViabilidadesTecnicasGam = React.lazy(() => import('./views/gam/viabilidades/ViabilidadesTecnicasGam'))
-const ViabilidadesGerenciaisGam = React.lazy(() => import('./views/gam/viabilidades/ViabilidadesGerenciaisGam'))
+const IntroViabilidadesGam = React.lazy(() => import('./views/gam/viabilities/IntroductionViabilities'))
+const ViabilidadesTecnicas = React.lazy(() => import('./views/gam/viabilities/TechnicalViabilities'))
+const ViabilidadesGerenciais = React.lazy(() => import('./views/gam/viabilities/ManagerialViabilities'))
 
-const IntroImplemantacaoGam = React.lazy(() => import('./views/gam/implementacao/IntroImplementacaoGam'))
-const ImplementacaoIntegracaoGam = React.lazy(() => import('./views/gam/implementacao/ImplIntegracaoGam'))
-const ImplementacaoOperacionalGam = React.lazy(() => import('./views/gam/implementacao/ImplOperacionalGam'))
+const IntroImplemantacaoGam = React.lazy(() => import('./views/gam/implementation/IntroductionImplementation'))
+const ImplementacaoIntegracaoGam = React.lazy(() => import('./views/gam/implementation/IntegrationImplementation'))
+const ImplementacaoOperacional = React.lazy(() => import('./views/gam/implementation/OperationalImplementation'))
 
 const IntroExpansaoGam = React.lazy(() => import('./views/gam/expansao/IntroExpansaoGam'))
 const ExpansaoEscalabilidadeGam = React.lazy(() => import('./views/gam/expansao/ExpansaoEscalabilidadeGam'))
@@ -24,11 +24,11 @@ const routes = [
   { path: '/gam/introducao', name: 'GAM - Introdução', element: IntroducaoGam },
   
   { path: '/gam/introducao-viabilidades', name: 'Estudos da Viabilidade', element: IntroViabilidadesGam },
-  { path: '/gam/viabilidades-tecnicas', name: 'Viabilidades Técnicas', element: ViabilidadesTecnicasGam },
-  { path: '/gam/viabilidades-gerenciais', name: 'Viabilidades Gerenciais', element: ViabilidadesGerenciaisGam },
+  { path: '/gam/viabilidades-tecnicas', name: 'Viabilidades Técnicas', element: ViabilidadesTecnicas },
+  { path: '/gam/viabilidades-gerenciais', name: 'Viabilidades Gerenciais', element: ViabilidadesGerenciais },
 
   { path: '/gam/introducao-implementacao', name: 'Implementação', element: IntroImplemantacaoGam},
-  { path: '/gam/inplementacao-operacional', name: 'Implementações Operacionais', element: ImplementacaoOperacionalGam},
+  { path: '/gam/inplementacao-operacional', name: 'Implementações Operacionais', element: ImplementacaoOperacional},
   { path: '/gam/inplementacao-integração', name: 'Implementações de Integração', element: ImplementacaoIntegracaoGam },
 
   { path: '/gam/introducao-expansao', name: 'Expansão', element: IntroExpansaoGam},
