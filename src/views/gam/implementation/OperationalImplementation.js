@@ -5,7 +5,7 @@ import { Tabs, Tab, Alert } from 'react-bootstrap';
 
 import '../../../scss/_custom.scss';
 
-const TOTAL_ITEMS = 11;
+const TOTAL_ITEMS = 16;
 
 const OperationalImplementation = () => {
   const [operationalImplementation, setCheckedItems] = useState({});
@@ -103,8 +103,8 @@ const OperationalImplementation = () => {
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Pipeline"
-                            checked={operationalImplementation['Pipeline'] || false}
+                            name="Orquestração"
+                            checked={operationalImplementation['Orquestração'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Orquestração: Explorar ferramentas como Kubernetes para orquestração de contêineres e escalabilidade.
@@ -114,8 +114,8 @@ const OperationalImplementation = () => {
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Orquestração"
-                            checked={operationalImplementation['Orquestração'] || false}
+                            name="Logs e rastreamento"
+                            checked={operationalImplementation['Logs e rastreamento'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Logs e rastreamento: Integrar sistemas de registro (logs) e rastreamento para acompanhar eventos durante o processo de compilação e implantação. Isso facilita a identificação rápida de problemas e a análise de desempenho.

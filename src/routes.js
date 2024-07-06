@@ -12,11 +12,11 @@ const IntroImplemantacaoGam = React.lazy(() => import('./views/gam/implementatio
 const ImplementacaoIntegracaoGam = React.lazy(() => import('./views/gam/implementation/IntegrationImplementation'))
 const ImplementacaoOperacional = React.lazy(() => import('./views/gam/implementation/OperationalImplementation'))
 
-const IntroExpansaoGam = React.lazy(() => import('./views/gam/expansao/IntroExpansaoGam'))
-const ExpansaoEscalabilidadeGam = React.lazy(() => import('./views/gam/expansao/ExpansaoEscalabilidadeGam'))
-const ExpansaoManutenibilidadeGam = React.lazy(() => import('./views/gam/expansao/ExpansaoManutenibilidadeGam'))
+const IntroductionExpansion = React.lazy(() => import('./views/gam/expansion/IntroductionExpansion'))
+const Scalability = React.lazy(() => import('./views/gam/expansion/Scalability'))
+const Maintainability = React.lazy(() => import('./views/gam/expansion/Maintainability'))
 
-const ProjetoPilotoGam = React.lazy(() => import('./views/gam/projeto-piloto/ProjetoPilotoGam'))
+const PilotProject = React.lazy(() => import('./views/gam/pilot-project/PilotProject'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home', element: IntroducaoGam },
@@ -31,11 +31,11 @@ const routes = [
   { path: '/gam/inplementacao-operacional', name: 'Implementações Operacionais', element: ImplementacaoOperacional},
   { path: '/gam/inplementacao-integração', name: 'Implementações de Integração', element: ImplementacaoIntegracaoGam },
 
-  { path: '/gam/introducao-expansao', name: 'Expansão', element: IntroExpansaoGam},
-  { path: '/gam/expansao-escalabilidade', name: 'Escalabilidade', element: ExpansaoEscalabilidadeGam},
-  { path: '/gam/expansao-manutenibilidade', name: 'Manutenibilidade', element: ExpansaoManutenibilidadeGam },
+  { path: '/gam/introducao-expansao', name: 'Expansão', element: IntroductionExpansion},
+  { path: '/gam/expansao-escalabilidade', name: 'Escalabilidade', element: Scalability},
+  { path: '/gam/expansao-manutenibilidade', name: 'Manutenibilidade', element: Maintainability },
 
-  { path: '/projeto-piloto', name: 'Projeto Piloto', element: ProjetoPilotoGam },
+  { path: '/projeto-piloto', name: 'Projeto Piloto', element: PilotProject },
 ]
 
 export default routes

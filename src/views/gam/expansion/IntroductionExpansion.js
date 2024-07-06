@@ -1,10 +1,10 @@
 
 import ExpnsaoImg from '../../../assets/images/gam_expansion.png'
 
-import { CCard, CCardBody, CCardHeader, CCol, CRow, CButton } from '@coreui/react';
+import { CCard, CCardBody, CCol, CRow, CButton } from '@coreui/react';
 import React from 'react';
 
-const IntroExpansaoGam = () => {
+const IntroductionExpansion = () => {
 
   return (
     <CRow>
@@ -56,4 +56,4 @@ const IntroExpansaoGam = () => {
   )
 }
 
-export default IntroExpansaoGam
+export default IntroductionExpansion
