@@ -7,14 +7,14 @@ import '../../../scss/_custom.scss';
 
 const TOTAL_ITEMS = 11;
 
-const IntegrationImplementation = () => {
-  const [integrationImplementation, setCheckedItems] = useState({});
+const IntegrationDecision = () => {
+  const [integrationDecisions, setCheckedItems] = useState({});
   const [showMessage, setShowMessage] = useState(false);
   const [integrationPercentage, setSelectedPercentageState] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const savedItems = localStorage.getItem('integrationImplementation');
+    const savedItems = localStorage.getItem('integrationDecisions');
     if (savedItems) {
       setCheckedItems(JSON.parse(savedItems));
     }
@@ -33,13 +33,13 @@ const IntegrationImplementation = () => {
         ...prevCheckedItems,
         [itemName]: isChecked,
       };
-      localStorage.setItem('integrationImplementation', JSON.stringify(checkedItemsManagerialFeasibility));
+      localStorage.setItem('integrationDecisions', JSON.stringify(checkedItemsManagerialFeasibility));
       return checkedItemsManagerialFeasibility;
     });
   };
 
   useEffect(() => {
-    const selectedOptions = Object.values(integrationImplementation).filter((value) => value).length;
+    const selectedOptions = Object.values(integrationDecisions).filter((value) => value).length;
     const percentage = (selectedOptions / TOTAL_ITEMS) * 100;
     if (TOTAL_ITEMS > 0) {
       setSelectedPercentageState(percentage.toFixed(1));
@@ -48,7 +48,7 @@ const IntegrationImplementation = () => {
     }
 
     setShowMessage(percentage === 100);
-  }, [integrationImplementation, dispatch]);
+  }, [integrationDecisions, dispatch]);
 
   return (
     <CRow>
@@ -92,7 +92,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Avaliação da Infraestrutura Atual"
-                            checked={integrationImplementation['Avaliação da Infraestrutura Atual'] || false}
+                            checked={integrationDecisions['Avaliação da Infraestrutura Atual'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Realizar uma análise detalhada da infraestrutura tecnológica existente, identificando as tecnologias, frameworks e bibliotecas em uso.
@@ -103,7 +103,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Identificação de Conflitos Potenciais"
-                            checked={integrationImplementation['Identificação de Conflitos Potenciais'] || false}
+                            checked={integrationDecisions['Identificação de Conflitos Potenciais'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Identificação de Conflitos Potenciais: Identificar possíveis conflitos entre as tecnologias utilizadas
@@ -115,7 +115,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Padronização de Tecnologias"
-                            checked={integrationImplementation['Padronização de Tecnologias'] || false}
+                            checked={integrationDecisions['Padronização de Tecnologias'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Considerar a padronização de tecnologias que são comuns tanto na infraestrutura atual quanto na arquitetura de Micro-Frontends para facilitar a integração.
@@ -126,7 +126,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Testes de Compatibilidade"
-                            checked={integrationImplementation['Testes de Compatibilidade'] || false}
+                            checked={integrationDecisions['Testes de Compatibilidade'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Implementar testes específicos usando o projeto piloto para verificar a
@@ -157,7 +157,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Mapeamento de Interfaces"
-                            checked={integrationImplementation['Mapeamento de Interfaces'] || false}
+                            checked={integrationDecisions['Mapeamento de Interfaces'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Mapeamento de Interfaces: Realizar um mapeamento claro das interfaces entre os Micro-Frontends e outros
@@ -169,7 +169,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Definição de Contratos"
-                            checked={integrationImplementation['Definição de Contratos'] || false}
+                            checked={integrationDecisions['Definição de Contratos'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Definição de Contratos: Estabelecer contratos claros e documentados entre os Micro-Frontends e os serviços
@@ -181,7 +181,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Monitoramento Contínuo"
-                            checked={integrationImplementation['Monitoramento Contínuo'] || false}
+                            checked={integrationDecisions['Monitoramento Contínuo'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Monitoramento Contínuo: Implemente mecanismos de monitoramento contínuo para identificar e resolver
@@ -210,7 +210,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Análise de Requisitos"
-                            checked={integrationImplementation['Análise de Requisitos'] || false}
+                            checked={integrationDecisions['Análise de Requisitos'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Análise de Requisitos: Realizar uma análise aprofundada dos requisitos funcionais da aplicação,
@@ -222,7 +222,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Design Modular"
-                            checked={integrationImplementation['Design Modular'] || false}
+                            checked={integrationDecisions['Design Modular'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Design Modular: Adote um design modular para os Micro-Frontends, dividindo a aplicação em componentes
@@ -234,7 +234,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Testes Unitários e de Integração"
-                            checked={integrationImplementation['Testes Unitários e de Integração'] || false}
+                            checked={integrationDecisions['Testes Unitários e de Integração'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Testes Unitários e de Integração: Implementar testes unitários e de integração para validar a funcionalidade
@@ -246,7 +246,7 @@ const IntegrationImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Documentação Clara"
-                            checked={integrationImplementation['Documentação Clara'] || false}
+                            checked={integrationDecisions['Documentação Clara'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Documentação Clara: Mantenha uma documentação clara e abrangente que descreva as interações funcionais
@@ -274,4 +274,4 @@ const IntegrationImplementation = () => {
   );
 }
 
-export default IntegrationImplementation;
+export default IntegrationDecision;

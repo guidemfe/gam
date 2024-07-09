@@ -62,7 +62,7 @@ const TechnicalViabilities = () => {
               </Alert>
             </div>
             <p>
-              O Estudo de Viabilidade, no contexto das diretrizes para adoção de Micro-Frontends (GAM), 
+              O Estudo de Viabilidade, no contexto do Guia para Adoção de Micro-Frontends (GAM), 
               é uma fase estratégica e sequencial que busca analisar as viabilidades gerenciais e técnicas 
               antes de decidir pela implementação da arquitetura de Micro-Frontends. 
               Essa abordagem visa garantir uma transição suave e bem-sucedida para essa arquitetura inovadora. A imagem abaixo demostra o fluxo

@@ -10,12 +10,12 @@ const IntroducaoMicrofrontend = () => {
         <CCard className="mb-4">
 
           <CCardBody>
-          <h4>Micro Frontends</h4>
+          <h4>Micro-Frontends (Overview)</h4>
           <hr />
-            <p>Com o tamanho e complexidade do sistema de software, é comum utilizar principalmente uma arquitetura monolítica, uma arquitetura frontend e backend ou uma arquitetura de microsserviços. Para sistemas de software grandes e complexos, a tendência atual é construir um aplicativo de navegador rico em recursos e poderoso, também conhecido como aplicativo de página única (SPA), que se baseia em uma arquitetura de microsserviços.</p>
-            <p>Nesse cenário, há equipes separadas para implementações de backend para cada funcionalidade. Elas constroem seus próprios microsserviços de backend para as funcionalidades específicas, e a equipe de frontend precisa trabalhar em relação a todas as características.</p>
-            <p>Com o tempo, a camada de frontend, frequentemente desenvolvida por uma equipe separada, cresce e se torna mais difícil de manter. Isso é o que chamamos de um Frontend Monolítico.</p>
-            <p>A ideia por trás dos Micro Frontends é pensar em um site ou aplicativo da web como uma composição de recursos de propriedade de equipes independentes.</p>
+            <p>With the size and complexity of software systems, it is common to primarily use a monolithic architecture, a frontend and backend architecture, or a microservices architecture. For large and complex software systems, the current trend is to build a feature-rich and powerful browser application, also known as a Single Page Application (SPA), which relies on a microservices architecture.</p>
+            <p>In this scenario, there are separate teams for backend implementations for each functionality. They build their own backend microservices for specific functionalities, and the frontend team needs to work in relation to all the features.</p>
+            <p>Over time, the frontend layer, often developed by a separate team, grows and becomes more difficult to maintain. This is what we call a Monolithic Frontend.</p>
+            <p>The idea behind Micro Frontends is to think of a website or web application as a composition of features owned by independent teams.</p>
 
             <img src={EvolucaoImg} alt="Evolução" className="img-fluid mb-3"  />
 

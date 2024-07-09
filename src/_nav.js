@@ -7,8 +7,8 @@ import BadgeForViabilidadesTecnicas from './views/gam/viabilities/BadgeForViabil
 const _nav = [
   {
     component: CNavItem,
-    name: 'Introdução',
-    to: '/gam/introducao',
+    name: 'Introduction',
+    to: '/gam/introduction',
   },
   {
     component: CNavItem,
@@ -23,76 +23,76 @@ const _nav = [
     component: CNavGroup,
     name: (
       <>
-        Estudo da Viabilidade 
+        Viability Study 
       </>
     ),
     to: '#',
     items: [
       {
         component: CNavItem,
-        name: 'Introdução',
-        to: '/gam/introducao-viabilidades',
+        name: 'Introduction',
+        to: '/gam/viability',
       },
       {
         component: CNavItem,
-        name: 'Viabilidades Técnicas',
-        to: '/gam/viabilidades-tecnicas',
+        name: 'Technical Viability',
+        to: '/gam/viability/technical-viability',
       },
       {
         component: CNavItem,
-        name: 'Viabilidades Gerenciais',
-        to: '/gam/viabilidades-gerenciais',
+        name: 'Managerial Viability',
+        to: '/gam/viability/managerial-viability',
       },
     ],
   },
   {
     component: CNavGroup,
-    name: 'Implementação',
+    name: 'Implementation',
     to: '#',
     items: [
       {
         component: CNavItem,
-        name: 'Introdução',
-        to: '/gam/introducao-implementacao',
+        name: 'Introduction',
+        to: '/gam/implementation',
       },
       {
         component: CNavItem,
-        name: 'Integração',
-        to: '/gam/inplementacao-integração',
+        name: 'Integration Decisions',
+        to: '/gam/implementation/integration-decisions',
       },
       {
         component: CNavItem,
-        name: 'Operacional',
-        to: '/gam/inplementacao-operacional',
+        name: 'Operational Decisions',
+        to: '/gam/implementation/operational-decisions',
       },
     ],
   },
   {
     component: CNavGroup,
-    name: 'Expansão',
-    to: '/microfrontend',
+    name: 'Expansion',
+    to: '#',
     items: [
       {
         component: CNavItem,
-        name: 'Introdução',
-        to: '/gam/introducao-expansao',
+        name: 'Introduction',
+        to: '/gam/expansion',
       },
       {
         component: CNavItem,
-        name: 'Escalabilidade',
-        to: '/gam/expansao-escalabilidade',
+        name: 'Scalability',
+        to: '/gam/expansion/scalability',
       },
       {
         component: CNavItem,
-        name: 'Manutenibilidade',
-        to: '/gam/expansao-manutenibilidade',
+        name: 'Maintainability',
+        to: '/gam/expansion/maintainability',
       },
     ],
   },
   {
     component: CNavItem,
-    name: 'Projeto Piloto',
-    to: '/projeto-piloto',
+    name: 'Pilot Project',
+    to: '/pilot-project',
   },
 ];
 

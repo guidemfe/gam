@@ -7,14 +7,14 @@ import '../../../scss/_custom.scss';
 
 const TOTAL_ITEMS = 16;
 
-const OperationalImplementation = () => {
-  const [operationalImplementation, setCheckedItems] = useState({});
+const OperationalDecisions = () => {
+  const [operationalDecisions, setCheckedItems] = useState({});
   const [showMessage, setShowMessage] = useState(false);
   const [operationalPercentage, setSelectedPercentageState] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const savedItems = localStorage.getItem('operationalImplementation');
+    const savedItems = localStorage.getItem('operationalDecisions');
     if (savedItems) {
       setCheckedItems(JSON.parse(savedItems));
     }
@@ -33,13 +33,13 @@ const OperationalImplementation = () => {
         ...prevCheckedItems,
         [itemName]: isChecked,
       };
-      localStorage.setItem('operationalImplementation', JSON.stringify(checkedItemsManagerialFeasibility));
+      localStorage.setItem('operationalDecisions', JSON.stringify(checkedItemsManagerialFeasibility));
       return checkedItemsManagerialFeasibility;
     });
   };
 
   useEffect(() => {
-    const selectedOptions = Object.values(operationalImplementation).filter((value) => value).length;
+    const selectedOptions = Object.values(operationalDecisions).filter((value) => value).length;
     const percentage = (selectedOptions / TOTAL_ITEMS) * 100;
     if (TOTAL_ITEMS > 0) {
       setSelectedPercentageState(percentage.toFixed(1));
@@ -48,7 +48,7 @@ const OperationalImplementation = () => {
     }
 
     setShowMessage(percentage === 100);
-  }, [operationalImplementation, dispatch]);
+  }, [operationalDecisions, dispatch]);
 
   return (
     <CRow>
@@ -82,7 +82,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Integração e Entrega contínua (CI/CD)"
-                            checked={operationalImplementation['Integração e Entrega contínua (CI/CD)'] || false}
+                            checked={operationalDecisions['Integração e Entrega contínua (CI/CD)'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Integração e Entrega contínua (CI/CD): Utilizar ferramentas de integração contínua e entrega contínua (CI/CD) para automatizar o processo de compilação, testes e implantação. Garanta que cada alteração no código seja submetida a um pipeline automatizado para validar e implantar automaticamente.
@@ -93,7 +93,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Pipeline"
-                            checked={operationalImplementation['Pipeline'] || false}
+                            checked={operationalDecisions['Pipeline'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Pipeline: Configurar pipelines de entrega contínua para garantir uma integração suave e implantações rápidas. Automatize a geração de artefatos, como contêineres ou pacotes, prontos para a implantação em ambientes de produção.
@@ -104,7 +104,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Orquestração"
-                            checked={operationalImplementation['Orquestração'] || false}
+                            checked={operationalDecisions['Orquestração'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Orquestração: Explorar ferramentas como Kubernetes para orquestração de contêineres e escalabilidade.
@@ -115,7 +115,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Logs e rastreamento"
-                            checked={operationalImplementation['Logs e rastreamento'] || false}
+                            checked={operationalDecisions['Logs e rastreamento'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Logs e rastreamento: Integrar sistemas de registro (logs) e rastreamento para acompanhar eventos durante o processo de compilação e implantação. Isso facilita a identificação rápida de problemas e a análise de desempenho.
@@ -126,7 +126,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Métricas de Desempenho"
-                            checked={operationalImplementation['Métricas de Desempenho'] || false}
+                            checked={operationalDecisions['Métricas de Desempenho'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Métricas de Desempenho: Implementar métricas de desempenho durante a compilação e a implantação para monitorar a eficiência do processo. Utilize ferramentas que ofereçam visibilidade em tempo real e alertas para eventos críticos.
@@ -149,7 +149,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Identificação de Funcionalidades Comuns"
-                            checked={operationalImplementation['Identificação de Funcionalidades Comuns'] || false}
+                            checked={operationalDecisions['Identificação de Funcionalidades Comuns'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Identificação de Funcionalidades Comuns: Identificar funcionalidades comuns que possam ser usadas por bibliotecas.
@@ -160,7 +160,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Web Components e Design System"
-                            checked={operationalImplementation['Web Components e Design System'] || false}
+                            checked={operationalDecisions['Web Components e Design System'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Web Components e Design System: Criar Web Components para encapsular funcionalidades específicas, garantindo modularidade e reusabilidade e integrar ao Design System da organização, garantindo consistência visual e de interação em todos os micro-frontends.
@@ -171,7 +171,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Controle de Versão"
-                            checked={operationalImplementation['Controle de Versão'] || false}
+                            checked={operationalDecisions['Controle de Versão'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Controle de Versão: Implementar um sistema de controle de versão como git utilizando ferramentas de gestão de pacotes npm ou yarn.
@@ -194,7 +194,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Carregamento Assíncrono de Módulos"
-                            checked={operationalImplementation['Carregamento Assíncrono de Módulos'] || false}
+                            checked={operationalDecisions['Carregamento Assíncrono de Módulos'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Carregamento Assíncrono de Módulos: Adotar estratégias de carregamento assíncrono, como Lazy Loading, para carregar módulos somente quando necessário, reduzindo o tempo de carregamento inicial.
@@ -205,7 +205,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Otimização de Renderização"
-                            checked={operationalImplementation['Otimização de Renderização'] || false}
+                            checked={operationalDecisions['Otimização de Renderização'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Otimização de Renderização: Utilizar técnicas como Virtual DOM ou Shadow DOM para otimizar a renderização, minimizando as atualizações desnecessárias na interface do usuário.
@@ -216,7 +216,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Gestão de Estado"
-                            checked={operationalImplementation['Gestão de Estado'] || false}
+                            checked={operationalDecisions['Gestão de Estado'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Gestão de Estado: Implementar uma gestão de estado escolhendo uma solução que minimize a reatividade excessiva e mantenha um estado coerente entre os micro-frontends.
@@ -227,7 +227,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Cache de Recursos"
-                            checked={operationalImplementation['Cache de Recursos'] || false}
+                            checked={operationalDecisions['Cache de Recursos'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Cache de Recursos: Implementar estratégias de cache para recursos estáticos e dinâmicos, reduzindo a necessidade de buscar repetidamente os mesmos dados do servidor.
@@ -250,7 +250,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Modelo de Squad"
-                            checked={operationalImplementation['Modelo de Squad'] || false}
+                            checked={operationalDecisions['Modelo de Squad'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Modelo de Squad: Implementar o modelo de Squads, onde equipes multifuncionais e autônomas são responsáveis por recursos específicos. Isso promove a especialização e agilidade, favorecendo a entrega independente de micro-frontends.
@@ -261,7 +261,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Metodologia Ágil"
-                            checked={operationalImplementation['Metodologia Ágil'] || false}
+                            checked={operationalDecisions['Metodologia Ágil'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Metodologia Ágil: Adotar metodologias ágeis, como Scrum ou Kanban, para gerenciar o desenvolvimento de micro-frontends. Sprints regulares, reuniões de retrospectiva e práticas ágeis fortalecem a colaboração e a adaptação contínua.
@@ -272,7 +272,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Ferramentas de Colaboração"
-                            checked={operationalImplementation['Ferramentas de Colaboração'] || false}
+                            checked={operationalDecisions['Ferramentas de Colaboração'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Ferramentas de Colaboração: Utilizar ferramentas de colaboração, como Slack, Microsoft Teams ou outras plataformas de comunicação. Essas ferramentas facilitam a comunicação entre equipes distribuídas, promovendo a troca de informações de forma eficaz.
@@ -283,7 +283,7 @@ const OperationalImplementation = () => {
                           <input className='input-label'
                             type="checkbox"
                             name="Cultura de DevOps"
-                            checked={operationalImplementation['Cultura de DevOps'] || false}
+                            checked={operationalDecisions['Cultura de DevOps'] || false}
                             onChange={handleCheckboxChange}
                           />
                           Cultura de DevOps: Cultivar uma cultura de DevOps, integrando desenvolvimento e operações. Isso inclui automação de processos, entrega contínua e monitoramento, garantindo eficiência na implementação e manutenção.
@@ -305,4 +305,4 @@ const OperationalImplementation = () => {
   );
 }
 
-export default OperationalImplementation;
+export default OperationalDecisions;
