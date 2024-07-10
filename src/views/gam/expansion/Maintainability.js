@@ -54,15 +54,15 @@ const Maintainability = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-            <h4>Manutenibilidade</h4>
+            <h4>Maintainability</h4>
             <hr />
             <div>
               <Alert variant="success">
-                Percentual de opções selecionadas: {localStorage.getItem('maintainabilityPercentage') || '0.0'}%
+                Percentage of selected options: {localStorage.getItem('maintainabilityPercentage') || '0.0'}%
               </Alert>
             </div>
             <p>
-            A ISO/IEC 25010 define a manutenibilidade como a capacidade de um sistema ser modificado, atualizado e adaptado. Suas subcaracterísticas principais incluem Modularidade, Reusabilidade, Analisabilidade, Modificabilidade e Testabilidade. No contexto do Guia de Adoção ao micro-frontend (GAM), a manutenibilidade dá ênfase ao código, adaptamos os conceitos para focar em Analisabilidade, Modificabilidade e Testabilidade, destacando a importância da análise eficiente, modificação eficaz e testagem robusta do código-fonte em ambientes de micro-frontends.
+              ISO/IEC 25010 defines maintainability as the ability of a system to be modified, updated, and adapted. Its main subcharacteristics include Modularity, Reusability, Analyzability, Modifiability, and Testability. In the context of the micro-frontend Adoption Guide (GAM), maintainability emphasizes code, adapting the concepts to focus on Analyzability, Modifiability, and Testability, highlighting the importance of efficient analysis, effective modification, and robust testing of source code in micro-frontend environments.
             </p>
           </CCardBody>
         </CCard>
@@ -70,145 +70,145 @@ const Maintainability = () => {
           <CCardBody>
             <section>
               <Tabs defaultActiveKey="compatibility" id="technical-feasibilities-tabs" className="mb-3">
-                <Tab eventKey="compatibility" title="Analisabilidade">
+                <Tab eventKey="compatibility" title="Analyzability">
                   <ul className="no-bullets">
                     <li>
-                      <em>Objetivo:</em> Compreender a estrutura e funcionamento dos micro-frontends para diagnosticar problemas de forma rápida e precisa.
+                      <em>Objective:</em> Understand the structure and functioning of micro-frontends to diagnose problems quickly and accurately.
                     </li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Padrões de Nomenclatura"
-                            checked={maintainability['Padrões de Nomenclatura'] || false}
+                            name="Naming Conventions"
+                            checked={maintainability['Naming Conventions'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Padrões de Nomenclatura: Adotar convenções de nomenclatura consistentes para facilitar a identificação e compreensão de componentes.
+                          Naming Conventions: Adopt consistent naming conventions to facilitate identification and understanding of components.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Documentação"
-                            checked={maintainability['Documentação'] || false}
+                            name="Documentation"
+                            checked={maintainability['Documentation'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Documentação: Manter documentação detalhada sobre a arquitetura, interações e responsabilidades de cada micro-frontend.
+                          Documentation: Maintain detailed documentation about the architecture, interactions, and responsibilities of each micro-frontend.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Ferramentas de Análise Estática"
-                            checked={maintainability['Ferramentas de Análise Estática'] || false}
+                            name="Static Analysis Tools"
+                            checked={maintainability['Static Analysis Tools'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Ferramentas de Análise Estática: Utilizar ferramentas como ESLint e TSLint para análise estática de código, identificando padrões, complexidade e possíveis problemas. Ferramentas mais abrangentes como Sonar podem oferecer uma visão holística da qualidade do código, incluindo métricas de código-fonte, cobertura de código e detecção de possíveis problemas de segurança.
+                          Static Analysis Tools: Use tools like ESLint and TSLint for static code analysis, identifying patterns, complexity, and potential issues. More comprehensive tools like Sonar can provide a holistic view of code quality, including source code metrics, code coverage, and detection of potential security issues.
                         </label>
                       </div>
                     </ul>
                   </ul>
                   <div>
                     <div className="blue-box">
-                      <strong>Exemplo Prático:</strong> Um desenvolvedor é designado para atualizar a interface da página de detalhes do produto. Durante o processo, o desenvolvedor segue os padrões de nomenclatura, consulta a documentação para entender a estrutura e as interações, enquanto as ferramentas de análise estática (ESLint e TSLint) sinalizam potenciais melhorias no código. O Sonar complementa essa análise, fornecendo métricas detalhadas e identificando áreas de atenção, resultando em modificações eficientes e seguras no micro-frontend.
+                      <strong>Practical Example: </strong> A developer is assigned to update the interface of the product details page. During the process, the developer follows naming conventions, consults the documentation to understand the structure and interactions, while static analysis tools (ESLint and TSLint) flag potential code improvements. Sonar complements this analysis by providing detailed metrics and identifying areas of concern, resulting in efficient and secure modifications to the micro-frontend.
                     </div>
                   </div>
                 </Tab>
-                <Tab eventKey="integration" title="Modificabilidade">
+                <Tab eventKey="integration" title="Modifiability">
                   <ul className="no-bullets">
                     <li>
-                      <em>Objetivo:</em> Permitir modificações eficientes nos micro-frontends sem introduzir defeitos ou degradar a qualidade.
+                      <em>Objective:</em> Enable efficient modifications to micro-frontends without introducing defects or degrading quality.
                     </li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Design Modular"
-                            checked={maintainability['Design Modular'] || false}
+                            name="Modular Design"
+                            checked={maintainability['Modular Design'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Design Modular: Estruturar os micro-frontends de forma modular, minimizando acoplamento entre eles.
+                          Modular Design: Structure micro-frontends in a modular way, minimizing coupling between them.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Refatoração Contínua"
-                            checked={maintainability['Refatoração Contínua'] || false}
+                            name="Continuous Refactoring"
+                            checked={maintainability['Continuous Refactoring'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Refatoração Contínua: Incentivar práticas de refatoração para manter o código limpo e adaptável.
+                          Continuous Refactoring: Encourage refactoring practices to keep the code clean and adaptable.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Controle de Versão"
-                            checked={maintainability['Controle de Versão'] || false}
+                            name="Version Control"
+                            checked={maintainability['Version Control'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Controle de Versão: Utilizar sistemas de controle de versão eficientes, como Git, para rastrear alterações e facilitar reversões se necessário. Ferramentas como o Veracode podem ser incorporadas para realizar análises de segurança estática e dinâmica, ajudando a garantir modificações seguras.
+                          Version Control: Use efficient version control systems like Git to track changes and facilitate rollbacks if necessary. Tools like Veracode can be incorporated to perform static and dynamic security analysis, helping to ensure secure modifications.
                         </label>
                       </li>
                     </ul>
                   </ul>
                   <div className="blue-box">
-                    <strong>Exemplo Prático:</strong> Uma nova funcionalidade precisa ser adicionada a um dos micro-frontends. Com o design modular, o desenvolvedor pode isolar a implementação da nova funcionalidade sem afetar outras partes do sistema. Durante o processo, práticas contínuas de refatoração garantem que o código permaneça limpo e adaptável. O uso eficiente do controle de versão permite que o desenvolvedor rastreie e gerencie as alterações de maneira organizada. A integração do Veracode verifica possíveis vulnerabilidades de segurança, garantindo modificações seguras antes da implementação.
+                    <strong>Practical Example: </strong> A new feature needs to be added to one of the micro-frontends. With modular design, the developer can isolate the implementation of the new feature without affecting other parts of the system. During the process, continuous refactoring practices ensure that the code remains clean and adaptable. Efficient use of version control allows the developer to track and manage changes in an organized manner. Veracode integration checks for potential security vulnerabilities, ensuring secure modifications before deployment.
                   </div>
                 </Tab>
-                <Tab eventKey="functional-complexities" title="Testabilidade">
+                <Tab eventKey="functional-complexities" title="Testability">
                   <ul className="no-bullets">
                     <li>
-                      <em>Objetivo:</em> Garantir a efetividade dos testes, permitindo a detecção precoce de falhas e mudanças seguras.
+                      <em>Objective:</em> Ensure the effectiveness of tests, allowing early detection of failures and safe changes.
                     </li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Testes Unitários e de Integração"
-                            checked={maintainability['Testes Unitários e de Integração'] || false}
+                            name="Unit and Integration Testing"
+                            checked={maintainability['Unit and Integration Testing'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Testes Unitários e de Integração: Implementar testes unitários (usando Jest e Enzyme para React, por exemplo) e de integração para verificar a funcionalidade isolada e a interação entre os micro-frontends.
+                          Unit and Integration Testing: Implement unit tests (using Jest and Enzyme for React, for example) and integration tests to verify isolated functionality and interaction between micro-frontends.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Automação de Testes"
-                            checked={maintainability['Automação de Testes'] || false}
+                            name="Test Automation"
+                            checked={maintainability['Test Automation'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Automação de Testes: Utilize ferramentas de automação de testes, como Cypress, para agilizar o processo de verificação.
+                          Test Automation: Use test automation tools like Cypress to streamline the verification process.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Ambientes de Teste Semelhantes à Produção"
-                            checked={maintainability['Ambientes de Teste Semelhantes à Produção'] || false}
+                            name="Production-like Test Environments"
+                            checked={maintainability['Production-like Test Environments'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Ambientes de Teste Semelhantes à Produção: Manter ambientes de teste que reproduzam fielmente as condições de produção para validar o comportamento real do sistema.
+                          Production-like Test Environments: Maintain test environments that faithfully reproduce production conditions to validate the real behavior of the system.
                         </label>
                       </li>
                     </ul>
                   </ul>
                   <div>
                     <div className="blue-box">
-                      <strong>Exemplo Prático:</strong> Uma nova funcionalidade é adicionada a um micro-frontend específico. Os testes unitários garantem que a funcionalidade isolada funcione conforme o esperado, utilizando ferramentas como Jest para validar componentes React. Testes de integração, incorporando ferramentas como Cypress, verificam a interação entre os diferentes micro-frontends. A automação desses testes agiliza o processo de verificação, permitindo que a equipe de desenvolvimento detecte precocemente quaisquer falhas potenciais. Ao manter ambientes de teste semelhantes à produção, a equipe assegura que as condições reais do sistema sejam simuladas, validando de forma abrangente o comportamento do micro-frontend antes da implantação.
+                      <strong>Practical Example: </strong> A new feature is added to a specific micro-frontend. Unit tests ensure that the isolated functionality works as expected, using tools like Jest to validate React components. Integration tests, incorporating tools like Cypress, verify the interaction between different micro-frontends. Automation of these tests streamlines the verification process, allowing the development team to detect potential failures early on. By maintaining production-like test environments, the team ensures that real system conditions are simulated, comprehensively validating the behavior of the micro-frontend before deployment.
                     </div>
                   </div>
                 </Tab>

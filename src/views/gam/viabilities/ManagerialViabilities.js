@@ -55,102 +55,93 @@ const ManagerialViabilities = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-              <h4>Viabilidades Gerenciais</h4>
+              <h4>Managerial Viability</h4>
               <hr />
               <div>
                 <Alert variant="success">
-                  Percentual de opções selecionadas: {localStorage.getItem('managerialPercentage') || '0.0'}%
+                  Percentage of selected options: {localStorage.getItem('managerialPercentage') || '0.0'}%
                 </Alert>
               </div>
               <hr />
               <p>
-                No contexto da implementação da arquitetura Micro-Frontends, diversas viabilidades gerenciais 
-                se tornam cruciais para o sucesso do projeto. Este documento aborda questões estratégicas, 
-                financeiras e de gestão de mudanças que as organizações devem considerar ao adotar essa abordagem arquitetônica. 
-                As viabilidades gerenciais apresentadas incluem o alinhamento aos objetivos estratégicos, 
-                a avaliação de custos e orçamento, e a gestão de mudanças e treinamentos. 
-                Cada tópico destaca recomendações práticas e exemplos, 
-                proporcionando insights valiosos para líderes e equipes envolvidas na transição para a arquitetura de Micro-Frontends.
+              In the context of implementing Micro-Frontends architecture, various managerial viability become crucial for the project success. This document addresses strategic, financial, and change management issues that organizations should consider when adopting this architectural approach. The managerial viability presented include alignment with strategic objectives, cost and budget evaluation, and change management and training. Each topic highlights practical recommendations and examples, providing valuable insights for leaders and teams involved in the transition to Micro-Frontends architecture.
               </p>
           </CCardBody>
         </CCard>
         <CCard className="mb-4">
           <CCardBody>
             <section>
-              <Tabs defaultActiveKey="alignment" id="managerial-feasibilities-tabs" className="mb-3">
-                <Tab eventKey="alignment" title="Alinhamento aos Objetivos Estratégicos">
+              <Tabs defaultActiveKey="alignment" id="managerial-viability-tabs" className="mb-3">
+                <Tab eventKey="alignment" title="Alignment with Strategic Objectives">
                   <ul>
-                    <li>Objetivo: Assegurar que a implementação da arquitetura Micro-frontend esteja alinhada aos objetivos estratégicos da organização.</li>
-                    <li>Recomendações:</li>
+                    <li>Objective: Ensure that the implementation of the Micro-Frontends architecture is aligned with the organization&apos;s strategic objectives.</li>
+                    <li>Recommendations:</li>
                     <ul>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Análise de Impacto na Gestão"
-                            checked={managerialViabilities['Análise de Impacto na Gestão'] || false}
+                            name="Management Impact Analysis"
+                            checked={managerialViabilities['Management Impact Analysis'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Análise de Impacto na Gestão: Realizar uma análise do impacto da introdução de micro-frontends de forma progressiva nos objetivos estratégicos da gestão. Avaliar a viabilidade de alinhamento gradual, sem forçar uma transição imediata.
+                          Management Impact Analysis: Conduct an impact analysis of the progressive introduction of micro-frontends on strategic management objectives. Evaluate the feasibility of gradual alignment without forcing an immediate transition.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Mapeamento de Benefícios"
-                            checked={managerialViabilities['Mapeamento de Benefícios'] || false}
+                            name="Benefit Mapping:"
+                            checked={managerialViabilities['Benefit Mapping:'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Mapeamento de Benefícios: Identificar os benefícios potenciais da adoção gradual de micro-frontends para os objetivos estratégicos da empresa, priorizando a harmonização com as metas existentes.
+                          Benefit Mapping: Identify the potential benefits of the gradual adoption of micro-frontends for the company&apos;s strategic objectives, prioritizing harmonization with existing goals.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Ajustes de Metas Estratégicas"
-                            checked={managerialViabilities['Ajustes de Metas Estratégicas'] || false}
+                            name="Strategic Goal Adjustments"
+                            checked={managerialViabilities['Strategic Goal Adjustments'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Ajustes de Metas Estratégicas: Analisar a necessidade de ajustar ou realinhar as metas estratégicas para otimizar a adoção do micro-frontends, assegurando que estejam alinhadas com a visão a longo prazo da organização.
+                          Strategic Goal Adjustments: Analyze the need to adjust or realign strategic goals to optimize the adoption of micro-frontends, ensuring they are aligned with the organization&apos;s long-term vision.
                         </label>
                       </div>
                     </ul>
                     <div className="blue-box-2">
-                      <strong>Exemplo Prático:</strong> 
-                      Para alinhar a adoção da arquitetura de micro-frontends aos objetivos estratégicos, 
-                      a gestão deve identificar metas específicas, envolver stakeholders, estabelecer indicadores-chave de desempenho 
-                      (KPIs) mensuráveis, implementar metodologias ágeis, realizar avaliações contínuas com feedback dos usuários finais, 
-                      ajustar estratégias conforme necessário e manter uma comunicação transparente sobre o progresso e desafios.
+                      <strong>Practical Example: </strong> 
+                       To align the adoption of micro-frontends architecture with strategic objectives, management should identify specific goals, involve stakeholders, establish measurable key performance indicators (KPIs), implement agile methodologies, conduct continuous evaluations with feedback from end users, adjust strategies as necessary, and maintain transparent communication about progress and challenges.
                     </div>
                   </ul>
                 </Tab>
-                <Tab eventKey="costs" title="Custos e Orçamento">
+                <Tab eventKey="costs" title="Costs and Budget">
                   <ul>
-                    <li>Objetivo: Avaliar os impactos financeiros relacionados à adoção da arquitetura de micro-frontends no contexto do GAM, identificando custos associados e garantindo uma gestão orçamentária eficaz.</li>
-                    <li>Recomendações:</li>
+                    <li>Objective: Evaluate the financial impacts related to the adoption of micro-frontends architecture within the context of GAM, identifying associated costs and ensuring effective budget management.</li>
+                    <li>Recommendations:</li>
                     <ul>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Levantamento Detalhado de Custos"
-                            checked={managerialViabilities['Levantamento Detalhado de Custos'] || false}
+                            name="Detailed Cost Assessment"
+                            checked={managerialViabilities['Detailed Cost Assessment'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Levantamento Detalhado de Custos: Realizar um levantamento dos custos associados à implementação de micro-frontends. Incluir despesas relacionadas ao treinamento da equipe, possíveis atualizações de infraestrutura e aquisição de ferramentas específicas.
+                          Detailed Cost Assessment: Conduct a survey of the costs associated with the implementation of micro-frontends. Include expenses related to team training, potential infrastructure upgrades, and acquisition of specific tools.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Orçamento Flexível"
-                            checked={managerialViabilities['Orçamento Flexível'] || false}
+                            name="Flexible Budget"
+                            checked={managerialViabilities['Flexible Budget'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Orçamento Flexível: Estabelecer um orçamento flexível que permita adaptações conforme a evolução do projeto de adoção de micro-frontends. Incorporar uma margem para imprevistos e ajustes durante as fases iniciais da implementação.
+                          Flexible Budget: Establish a flexible budget that allows for adaptations as the micro-frontends adoption project evolves. Incorporate a contingency margin for unforeseen events and adjustments during the initial phases of implementation.
                         </label>
                       </div>
                       <div>
@@ -161,70 +152,58 @@ const ManagerialViabilities = () => {
                             checked={managerialViabilities['roi'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Avaliação de Retorno sobre Investimento (ROI): Desenvolver métricas para avaliação do retorno sobre o investimento. Monitorar indicadores-chave para garantir que os benefícios esperados estejam alinhados aos recursos financeiros empregados.
+                          Return on Investment (ROI) Evaluation: Develop metrics for assessing return on investment. Monitor key indicators to ensure expected benefits align with the financial resources invested.
                         </label>
                       </div>
                     </ul>
                     <div className="blue-box-2">
-                      <strong>Exemplo Prático:</strong> 
-                      Ao adotar a arquitetura de micro-frontends, a empresa XYZ precisa avaliar os custos associados à transição. 
-                      Isso inclui despesas com a capacitação da equipe, aquisição de ferramentas específicas para o desenvolvimento 
-                      e manutenção da nova arquitetura, e possíveis custos de licenciamento de plataformas. Recomenda-se a realização 
-                      de uma análise minuciosa para estimar esses custos, permitindo a alocação adequada de recursos no orçamento. 
-                      Além disso, a criação de cenários alternativos, como a continuidade da estrutura atual ou a avaliação de outras 
-                      arquiteturas, proporciona uma visão abrangente das opções disponíveis, contribuindo para uma decisão estratégica e financeiramente sólida.
+                      <strong>Practical Example: </strong> 
+                      When adopting the micro-frontends architecture, XYZ company needs to assess the costs associated with the transition. This includes expenses for team training, acquisition of specific tools for development and maintenance of the new architecture, and potential platform licensing costs. It is recommended to conduct a thorough analysis to estimate these costs, allowing for proper allocation of resources in the budget. Additionally, creating alternative scenarios, such as maintaining the current structure or evaluating other architectures, provides a comprehensive view of available options, contributing to a strategically and financially sound decision.
                     </div>
                   </ul>
                 </Tab>
-                <Tab eventKey="change-management" title="Gestão de Mudanças e Treinamentos">
+                <Tab eventKey="change-management" title="Change Management and Training">
                   <ul>
-                    <li>Objetivo: Avaliar a capacidade da organização em lidar com as mudanças que a adoção da arquitetura de Micro-Frontends pode trazer. Busca-se identificar os impactos nos processos, na cultura organizacional e na estrutura de equipe, além de preparar a equipe para a transição.</li>
-                    <li>Recomendações:</li>
+                    <li>Objective: Evaluate the organization&apos;s ability to manage the changes that adopting Micro-Frontends architecture may bring. This includes identifying impacts on processes, organizational culture, and team structure, as well as preparing the team for the transition.</li>
+                    <li>Recommendations:</li>
                     <ul>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Comunicação Efetiva"
-                            checked={managerialViabilities['Comunicação Efetiva'] || false}
+                            name="Effective Communication"
+                            checked={managerialViabilities['Effective Communication'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Comunicação Efetiva: Estabelecer um plano de comunicação claro e aberto para informar os membros da equipe sobre as mudanças planejadas. Comunique os benefícios da nova arquitetura, destacando como ela contribuirá para os objetivos estratégicos da empresa.
+                          Effective Communication: Establish a clear and open communication plan to inform team members about the planned changes. Communicate the benefits of the new architecture, emphasizing how it will contribute to the company&apos;s strategic objectives.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Treinamento Personalizado"
-                            checked={managerialViabilities['Treinamento Personalizado'] || false}
+                            name="Customized Training"
+                            checked={managerialViabilities['Customized Training'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Treinamento Personalizado: Desenvolva programas de treinamento específicos para as equipes que lidarão diretamente com os Micro-Frontends. Certifique-se de que os membros da equipe tenham as habilidades necessárias para trabalhar eficientemente com a nova arquitetura.
+                          Customized Training: Develop specific training programs for teams directly involved with Micro-Frontends. Ensure team members have the necessary skills to work efficiently with the new architecture.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Definir Marcos e Métricas"
-                            checked={managerialViabilities['Definir Marcos e Métricas'] || false}
+                            name="Defining Milestones and Metrics"
+                            checked={managerialViabilities['Defining Milestones and Metrics'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Definir Marcos e Métricas: Estabelecer marcos claros e métricas mensuráveis para avaliar o progresso durante a transição. Definir indicadores de sucesso ajudará a monitorar a eficácia das estratégias de gerenciamento de mudanças e identificar áreas que precisam de ajustes.
+                          Defining Milestones and Metrics: Establish clear milestones and measurable metrics to assess progress during the transition. Defining success indicators will help monitor the effectiveness of change management strategies and identify areas that need adjustment.
                         </label>
                       </div>
                     </ul>
                     <div className="blue-box-2">
-                      <strong>Exemplo Prático:</strong> 
-                      Uma empresa que deseja adotar a arquitetura de Micro-Frontends, precisa avaliar a capacidade organizacional 
-                      de lidar com as mudanças decorrentes dessa transição. Para garantir uma transição suave, a empresa 
-                      adota práticas como comunicação efetiva, realizando reuniões regulares para destacar os benefícios 
-                      da nova arquitetura, além de oferecer treinamento personalizado para as equipes envolvidas. 
-                      Paralelamente, são estabelecidos marcos claros e métricas mensuráveis para monitorar o progresso, 
-                      proporcionando uma avaliação contínua e a capacidade de ajustar estratégias de gerenciamento de mudanças 
-                      conforme necessário. Essas medidas visam preparar a equipe e a estrutura organizacional 
-                      para as transformações advindas da adoção de Micro-Frontend.
+                      <strong>Practical Example: </strong> 
+                      A company looking to adopt Micro-Frontends architecture needs to assess its organizational capacity to handle the changes that come with this transition. To ensure a smooth transition, the company adopts practices such as effective communication, holding regular meetings to highlight the benefits of the new architecture, and providing customized training for involved teams. Simultaneously, clear milestones and measurable metrics are established to monitor progress, enabling continuous evaluation and the ability to adjust change management strategies as needed. These measures aim to prepare the team and organizational structure for the transformations that come with adopting Micro-Frontends.
                     </div>
                   </ul>
                 </Tab>

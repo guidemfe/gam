@@ -2,6 +2,7 @@
 import ExpnsaoImg from '../../../assets/images/gam_expansion.png'
 
 import { CCard, CCardBody, CCol, CRow, CButton } from '@coreui/react';
+import '../../../scss/_custom.scss'
 import React from 'react';
 
 const IntroductionExpansion = () => {
@@ -12,48 +13,40 @@ const IntroductionExpansion = () => {
     <CCard className="mb-4">
       <CCardBody>
       <section>
-                <h4>Expansão</h4>
-                <hr />
-                <p>
-                  <div className='mb-4'>
-                  Fase de Expansão no Guidelines for Adopting Micro-Frontends (GAM) representa o
-                  período em que a arquitetura de Micro-Frontends evolui e se estende para além do seu
-                  ponto inicial de implementação. Esta etapa é marcada pela aplicação contínua dos prin-
-                  cípios e diretrizes estabelecidos nas fases anteriores, com foco na ampliação controlada da
-                  adoção da arquitetura em diferentes áreas do sistema.
-                  Durante a Expansão, as decisões tomadas na Avaliação Inicial e Implementação Prática continuam a moldar a jornada da equipe de desenvolvimento. O objetivo é escalar a
-                  aplicação da arquitetura de Micro-Frontends, garantindo uma transição suave e minimizando os riscos associados.
-                 
-                  </div>
+          <h4>Expansion</h4>
+          <hr />
+          <p>
+            <div className='mb-4'>
+            The Expansion phase in the Guidelines for Adopting Micro-Frontends (GAM) represents the
+            period in which the Micro-Frontends architecture evolves and extends beyond its initial
+            implementation point. This stage is marked by the continuous application of the principles
+            and guidelines established in the previous phases, with a focus on the controlled expansion
+            of the architecture adoption in different areas of the system.
+            During the Expansion phase, the decisions made in the Initial Assessment and Practical
+            Implementation continue to shape the development team&apos;s journey. The goal is to scale the
+            application of the Micro-Frontends architecture, ensuring a smooth transition and minimizing
+            associated risks.
+           
+            </div>
 
-                  <img src={ExpnsaoImg} alt="Expansão" className="img-fluid mb-3"  />
-                  <div className='mb-4'>
-                  Esta fase abrange desde a seleção de projetos pilotos até a ampliação para outros
-                  componentes do sistema. Aspectos práticos, aprendizado contínuo, treinamento da equipe
-                  e monitoramento constante são elementos-chave para garantir o sucesso da expansão. A
-                  equipe é incentivada a coletar feedback, realizar ajustes na estratégia conforme necessário                   e aprimorar continuamente a implementação com base nas lições aprendidas ao longo do
-                  processo. A Figura acima ilustra as estratégias sugeridas para a implementação desta fase
-                  considerando a escalabilidade e a manutenibilidade do sistema em que se pretende adotar
-                  a arquitetura de micro-frontend.
-                  </div>
-                </p>
-                
-            </section>
-      </CCardBody>
-    </CCard>
-    <CCard>
-      <CCardBody>
-        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-          <CButton color="primary" className="me-md-2">
-            Voltar
-          </CButton>
-          <CButton color="primary">Avançar</CButton>
-        </div>
+            <img src={ExpnsaoImg} alt="Expansion" className="img-fluid mb-3 center-img"  />
+            <div className='mb-4'>
+            This phase encompasses everything from selecting pilot projects to expanding to other
+            components of the system. Practical aspects, continuous learning, team training, and constant
+            monitoring are key elements to ensure the success of the expansion. The team is encouraged to
+            collect feedback, make adjustments to the strategy as necessary, and continuously improve the
+            implementation based on lessons learned throughout the process. The figure above illustrates
+            suggested strategies for implementing this phase, considering the scalability and maintainability
+            of the system in which the micro-frontend architecture is intended to be adopted.
+            </div>
+          </p>
+          
+        </section>
       </CCardBody>
     </CCard>
     </CCol>
-  </CRow>
-  )
+    </CRow>
+    )
 }
 
 export default IntroductionExpansion

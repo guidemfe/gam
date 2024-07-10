@@ -54,15 +54,15 @@ const Scalability = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-            <h4>Escalabilidade</h4>
+            <h4>Scalability</h4>
             <hr />
             <div>
               <Alert variant="success">
-                Percentual de opções selecionadas: {localStorage.getItem('scalabilityPercentage') || '0.0'}%
+                Percentage of selected options: {localStorage.getItem('scalabilityPercentage') || '0.0'}%
               </Alert>
             </div>
             <p>
-            Esta etapa visa capacitar a aplicação a crescer de maneira eficiente e adaptar-se às demandas variáveis do ambiente. As principais áreas de foco são a adição de novos micro-frontends, o gerenciamento de carga e as estratégias de cache.
+            This step aims to empower the application to grow efficiently and adapt to variable environmental demands. The main areas of focus are adding new micro-frontends, load management, and cache strategies.
             </p>
           </CCardBody>
         </CCard>
@@ -70,179 +70,178 @@ const Scalability = () => {
           <CCardBody>
             <section>
               <Tabs defaultActiveKey="compatibility" id="technical-feasibilities-tabs" className="mb-3">
-                <Tab eventKey="compatibility" title="Adição de Micro-Frontends:">
+                <Tab eventKey="compatibility" title="Adding Micro-Frontends">
                   <ul className="no-bullets">
                     <li>
-                      <em>Objetivo:</em> Facilitar a incorporação de novos micro-frontends ao sistema existente.
+                      <em>Objective:</em> Facilitate the incorporation of new micro-frontends into the existing system.
                     </li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Modularização Dinâmica"
-                            checked={scalability['Modularização Dinâmica'] || false}
+                            name="Dynamic Modularization"
+                            checked={scalability['Dynamic Modularization'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Modularização Dinâmica: Desenvolver arquitetura modular que suporte a adição dinâmica de novos micro-frontends sem impactar os existentes.
+                          Dynamic Modularization: Develop a modular architecture that supports the dynamic addition of new micro-frontends without impacting the existing ones.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Balanceamento de Carga"
-                            checked={scalability['Balanceamento de Carga'] || false}
+                            name="Load Balancing"
+                            checked={scalability['Load Balancing'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Balanceamento de Carga: Implementar sistema de balanceamento de carga automático como serviços de orquestração, usando ferramentas como Kubernetes, para facilitar o dimensionamento automático com base nas métricas de tráfego.
+                          Load Balancing: Implement an automatic load balancing system such as orchestration services using tools like Kubernetes to facilitate automatic scaling based on traffic metrics.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Gestão de Cache"
-                            checked={scalability['Gestão de Cache'] || false}
+                            name="Cache Management"
+                            checked={scalability['Cache Management'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Gestão de Cache: Adote estratégias de cache, como Redis, para armazenar temporariamente as respostas de micro-serviços, melhorando o throughput da composição de micro-frontends. Explore o armazenamento de DOM de micro-frontends em caches in-memory para reduzir a necessidade de recomposição a cada requisição.
+                          Cache Management: Adopt cache strategies like Redis to temporarily store micro-service responses, improving the throughput of micro-frontend composition. Explore in-memory caching of micro-frontend DOM to reduce the need for recomposition on every request.
                         </label>
                       </div>
                     </ul>
                   </ul>
                   <div>
                     <div className="blue-box">
-                      <strong>Exemplo Prático:</strong> Em um cenário de comércio eletrônico baseado em micro-frontends, um novo micro-frontend chamado
-                      &quot;Recomendações Personalizadas&quot; foi adicionado. Implementa-se um sistema de balanceamento de carga automático com Kubernetes para escalabilidade dinâmica com base no tráfego. Para aprimorar o desempenho, utiliza-se estratégias de cache, incluindo Redis, para armazenar temporariamente respostas de micro-serviços e o DOM de micro-frontends em caches in-memory, reduzindo a necessidade de recomposição a cada requisição.
+                      <strong>Practical Example: </strong> In a micro-frontend-based e-commerce scenario, a new micro-frontend called &quot;Personalized Recommendations&quot; was added. An automatic load balancing system with Kubernetes was implemented for dynamic scalability based on traffic. To enhance performance, cache strategies including Redis were used to temporarily store micro-service responses and micro-frontend DOM in in-memory caches, reducing the need for recomposition on every request.
                     </div>
                   </div>
                 </Tab>
-                <Tab eventKey="integration" title="Gerenciamento de Carga">
+                <Tab eventKey="integration" title="Load Management">
                   <ul className="no-bullets">
                     <li>
-                      <em>Objetivo:</em> Garantir a eficiência operacional e o desempenho otimizado da aplicação, mesmo diante de demandas crescentes.
+                      <em>Objective:</em> Ensure operational efficiency and optimized performance of the application even under increasing demands.
                     </li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Autoescalabilidade na Nuvem"
-                            checked={scalability['Autoescalabilidade na Nuvem'] || false}
+                            name="Cloud Auto-scalability"
+                            checked={scalability['Cloud Auto-scalability'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Autoescalabilidade na Nuvem: Utilize funcionalidades de autoescalabilidade oferecidas por provedores de nuvem para ajustar dinamicamente a infraestrutura com base nos padrões de tráfego. Escolha camadas de computação eficientes, como contêineres, para rápida execução, e considere opções gerenciadas, como serviços serverless, para simplificar a operacionalização da infraestrutura.
+                          Cloud Auto-scalability: Utilize auto-scalability features offered by cloud providers to dynamically adjust the infrastructure based on traffic patterns. Choose efficient computing layers like containers for fast execution and consider managed options like serverless services to simplify infrastructure operationalization.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Previsão de Carga e Ajuste Manual"
-                            checked={scalability['Previsão de Carga e Ajuste Manual'] || false}
+                            name="Load Prediction and Manual Adjustment"
+                            checked={scalability['Load Prediction and Manual Adjustment'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Previsão de Carga e Ajuste Manual: Estabelecer uma infraestrutura de linha de base capaz de lidar com cargas previsíveis, como vendas da Black Friday, adotando práticas de comparação entre diferentes serviços e opções plug-and-play.
+                          Load Prediction and Manual Adjustment: Establish a baseline infrastructure capable of handling predictable loads, such as Black Friday sales, by adopting comparison practices between different services and plug-and-play options.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Otimização de Latência com CDN"
-                            checked={scalability['Otimização de Latência com CDN'] || false}
+                            name="Latency Optimization with CDN"
+                            checked={scalability['Latency Optimization with CDN'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Otimização de Latência com CDN: Utilizar uma CDN para aumentar a velocidade de entrega das páginas da web, reduzindo a latência entre o cliente e o conteúdo solicitado.
+                          Latency Optimization with CDN: Utilize a CDN to increase the speed of web page delivery, reducing latency between the client and requested content.
                         </label>
                       </li>
                     </ul>
                   </ul>
                   <div className="blue-box">
-                    <strong>Exemplo Prático:</strong> Para otimizar o desempenho da plataforma de comércio eletrônico, foi aproveitada a autoescalabilidade na nuvem, utilizando serviços serverless e contêineres para ajustar dinamicamente a infraestrutura com base em padrões de tráfego, garantindo rápida execução e eficiência operacional. Para lidar com picos previsíveis, como as vendas da &quot;Black Friday&quot;, estabeleceu-se uma infraestrutura de linha de base com ajustes manuais quando necessário, utilizando práticas de comparação entre diferentes serviços e opções plug-and-play. Além disso, incorporou-se uma CDN para otimizar a latência, acelerando a entrega de páginas web e aprimorando a experiência do usuário em cenários de alta demanda.
+                    <strong>Practical Example: </strong> To optimize the performance of the e-commerce platform, cloud auto-scalability was leveraged using serverless services and containers to dynamically adjust the infrastructure based on traffic patterns, ensuring fast execution and operational efficiency. To handle predictable peaks like &quot;Black Friday&quot; sales, a baseline infrastructure was established with manual adjustments when necessary, using comparison practices between different services and plug-and-play options. Additionally, a CDN was incorporated to optimize latency, speeding up web page delivery and enhancing the user experience in high-demand scenarios.
                   </div>
                 </Tab>
-                <Tab eventKey="functional-complexities" title="Estratégias de Cache">
+                <Tab eventKey="functional-complexities" title="Cache Strategies">
                   <ul className="no-bullets">
                     <li>
-                      <em>Objetivo:</em> Otimizar o desempenho da aplicação reduzindo a carga nos servidores e acelerando o tempo de resposta.
+                      <em>Objective:</em> Optimize application performance by reducing server load and accelerating response time.
                     </li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Análise de Requisitos"
-                            checked={scalability['Análise de Requisitos'] || false}
+                            name="Requirements Analysis"
+                            checked={scalability['Requirements Analysis'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Análise de Requisitos: Realizar uma análise aprofundada dos requisitos funcionais da aplicação, identificando possíveis complexidades.
+                          Requirements Analysis: Perform an in-depth analysis of the application&quot;s functional requirements, identifying possible complexities.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Cache de Conteúdo Estático"
-                            checked={scalability['Cache de Conteúdo Estático'] || false}
+                            name="Static Content Cache"
+                            checked={scalability['Static Content Cache'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Cache de Conteúdo Estático: Implementar cache para conteúdo estático, como imagens, folhas de estilo e scripts, reduzindo a latência de carregamento.
+                          Static Content Cache: Implement caching for static content such as images, stylesheets, and scripts, reducing loading latency.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Cache de Dados Dinâmicos"
-                            checked={scalability['Cache de Dados Dinâmicos'] || false}
+                            name="Dynamic Data Cache"
+                            checked={scalability['Dynamic Data Cache'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Cache de Dados Dinâmicos: Utilizar estratégias de cache para dados dinâmicos, minimizando consultas frequentes ao servidor.
+                          Dynamic Data Cache: Utilize cache strategies for dynamic data, minimizing frequent server queries.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Invalidação de Cache Eficiente"
-                            checked={scalability['Invalidação de Cache Eficiente'] || false}
+                            name="Efficient Cache Invalidation"
+                            checked={scalability['Efficient Cache Invalidation'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Invalidação de Cache Eficiente: Implementar métodos eficazes de invalidação de cache para garantir que os usuários recebam informações atualizadas.
+                          Efficient Cache Invalidation: Implement effective cache invalidation methods to ensure users receive up-to-date information.
                         </label>
                         </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Cache de Respostas"
-                            checked={scalability['Cache de Respostas'] || false}
+                            name="Response Cache"
+                            checked={scalability['Response Cache'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Cache de Respostas: Implementar caches para armazenar temporariamente as respostas de micro-frontends, utilizando soluções como Redis, armazenando temporariamente as respostas de micro-serviços para aumentar o throughput.
+                          Response Cache: Implement caches to temporarily store micro-frontend responses, using solutions like Redis, temporarily storing micro-service responses to increase throughput.
                         </label>
                         </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Armazenamento de DOM em Cache"
-                            checked={scalability['Armazenamento de DOM em Cache'] || false}
+                            name="DOM Storage Cache"
+                            checked={scalability['DOM Storage Cache'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Armazenamento de DOM em Cache: Armazenar o DOM completo de micro-frontends em caches in-memory para evitar composição a cada requisição.
+                          DOM Storage Cache: Store the complete DOM of micro-frontends in in-memory caches to avoid excessive recomposition on every request.
                         </label>
                       </li>
                     </ul>
                   </ul>
                   <div>
                     <div className="blue-box">
-                      <strong>Exemplo Prático:</strong> Em uma aplicação web, introduziu-se caches para conteúdo estático (imagens e estilos), dados dinâmicos e respostas de micro-frontends e micro-serviços, utilizando soluções como Redis. Essas abordagens reduzem a latência de carregamento, minimizam consultas frequentes aos servidores e aumentam o throughput. Além disso, adotou-se métodos de invalidação de cache para garantir informações atualizadas e armazenou-se o DOM de micro-frontends em caches in-memory, evitando composição excessiva a cada requisição.
+                      <strong>Practical Example: </strong> In a web application, caches were introduced for static content (images and stylesheets), dynamic data, and micro-frontend and micro-service responses, using solutions like Redis. These approaches reduce loading latency, minimize frequent server queries, and increase throughput. Additionally, effective cache invalidation methods were adopted to ensure up-to-date information, and the DOM of micro-frontends was stored in in-memory caches, avoiding excessive recomposition on every request.
                     </div>
                   </div>
                 </Tab>

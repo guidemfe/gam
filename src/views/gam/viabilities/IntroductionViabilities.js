@@ -1,7 +1,9 @@
 
 import ViabilityImg from '../../../assets/images/gam_viabilities_study.png'
 
-import { CCard, CCardBody, CCol, CRow, CButton } from '@coreui/react';
+import { CCard, CCardBody, CCol, CRow } from '@coreui/react';
+
+import '../../../scss/_custom.scss';
 import React from 'react';
 
 const IntroductionViabilities = () => {
@@ -12,34 +14,16 @@ const IntroductionViabilities = () => {
     <CCard className="mb-4">
       <CCardBody>
       <section>
-                <h4>Estudo das Viabilidades</h4>
-                <hr />
-                <p>
-                  <div className='mb-4'>
-                    A etapa de Estudo da Viabilidade do Guidelines for Adopting Micro-Frontends (GAM) é 
-                    a fase que busca analisar as viabilidades gerenciais e técnicas antes de decidir sobre a ado-
-                    ção da arquitetura de Micro-Frontends. Essa avaliação é subdividida em dois momentos
-                    distintos: Viabilidades Técnicas e Viabilidades Gerenciais. É fundamental destacar que o
-                    estudo da viabilidade técnica precede o estudo da viabilidade gerencial. Essa abordagem
-                    garante que a gestão tenha artefatos e informações suficientes para analisar, por exemplo,
-                    os custos associados à transição, contribuindo para uma decisão fundamentada. A Figura
-                    abaixo ilustra o fluxo das análises necessárias para que a equipe decida pela adoção ou não
-                    da arquitetura.
-                  </div>
-                  <img src={ViabilityImg} alt="Viability" className="img-fluid mb-3"  />
-                </p>
-                
-            </section>
-      </CCardBody>
-    </CCard>
-    <CCard>
-      <CCardBody>
-        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-          <CButton color="primary" className="me-md-2">
-            Voltar
-          </CButton>
-          <CButton color="primary">Avançar</CButton>
-        </div>
+        <h4>Viability Study</h4>
+        <hr />
+        <p>
+            <div className='mb-4'>
+                The Viability Study phase of the Guidelines for Adopting Micro-Frontends (GAM) is the stage that seeks to analyze managerial and technical feasibilities before deciding on adopting the Micro-Frontends architecture. This evaluation is subdivided into two distinct moments: Technical Feasibilities and Managerial Feasibilities. It is essential to highlight that the technical Viability study precedes the managerial Viability study. This approach ensures that management has sufficient artifacts and information to analyze, for example, the costs associated with the transition, contributing to a well-founded decision. The figure below illustrates the flow of the necessary analyses for the team to decide on the adoption of the architecture.
+            </div>
+            <img src={ViabilityImg} alt="Viability" className="img-fluid mb-3 center-img" />
+        </p>
+      </section>
+
       </CCardBody>
     </CCard>
     </CCol>

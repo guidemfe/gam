@@ -55,16 +55,16 @@ const OperationalDecisions = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-              <h4>Decisões de Operacionais</h4>
+              <h4>Operational Decisions</h4>
               <hr />
               <div>
                 <Alert variant="success">
-                  Percentual de opções selecionadas: {localStorage.getItem('operationalPercentage') || '0.0'}%
+                  Percentage of selected options: {localStorage.getItem('operationalPercentage') || '0.0'}%
                 </Alert>
               </div>
               <hr />
               <p>
-              As decisões operacionais focam nas escolhas estratégicas das áreas de compilação e implantação, compartilhamento de código, otimização de desempenho e a estrutura organizacional. No contexto dos micro-frontends, a tomada de decisões operacionais práticas e bem-informadas é fundamental para assegurar a agilidade, a colaboração eficiente entre equipes e a adaptação contínua às demandas dinâmicas do desenvolvimento de software distribuído.
+              Operational decisions focus on the strategic choices of compilation and deployment areas, code sharing, performance optimization, and organizational structure. In the context of micro-frontends, making practical and well-informed operational decisions is crucial to ensure agility, efficient collaboration between teams, and continuous adaptation to the dynamic demands of distributed software development.
               </p>
           </CCardBody>
         </CCard>
@@ -72,20 +72,20 @@ const OperationalDecisions = () => {
           <CCardBody>
             <section>
               <Tabs defaultActiveKey="alignment" id="integration-implementation-tabs" className="mb-3">
-                <Tab eventKey="alignment" title="Compilação e Implantação">
+                <Tab eventKey="alignment" title="Build an Deploy">
                   <ul className="no-bullets">
-                    <li><em>Objetivo:</em> Implementar um processo eficiente de compilação e implantação para permitir atualizações rápidas e independentes de cada micro-frontend.</li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Objective:</em> Implement an efficient compilation and deployment process to enable quick and independent updates of each micro-frontend.</li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Integração e Entrega contínua (CI/CD)"
-                            checked={operationalDecisions['Integração e Entrega contínua (CI/CD)'] || false}
+                            name="Continuous Integration and Delivery (CI/CD)"
+                            checked={operationalDecisions['Continuous Integration and Delivery (CI/CD)'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Integração e Entrega contínua (CI/CD): Utilizar ferramentas de integração contínua e entrega contínua (CI/CD) para automatizar o processo de compilação, testes e implantação. Garanta que cada alteração no código seja submetida a um pipeline automatizado para validar e implantar automaticamente.
+                          Continuous Integration and Delivery (CI/CD): Use continuous integration and delivery (CI/CD) tools to automate the compilation, testing, and deployment process. Ensure that each code change is submitted to an automated pipeline for validation and automatic deployment.
                         </label>
                       </div>
                       <div>
@@ -96,203 +96,203 @@ const OperationalDecisions = () => {
                             checked={operationalDecisions['Pipeline'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Pipeline: Configurar pipelines de entrega contínua para garantir uma integração suave e implantações rápidas. Automatize a geração de artefatos, como contêineres ou pacotes, prontos para a implantação em ambientes de produção.
+                          Pipeline: Set up continuous delivery pipelines to ensure smooth integration and rapid deployments. Automate the generation of artifacts, such as containers or packages, ready for deployment in production environments.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Orquestração"
-                            checked={operationalDecisions['Orquestração'] || false}
+                            name="Orchestration"
+                            checked={operationalDecisions['Orchestration'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Orquestração: Explorar ferramentas como Kubernetes para orquestração de contêineres e escalabilidade.
+                          Orchestration: Explore tools like Kubernetes for container orchestration and scalability.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Logs e rastreamento"
-                            checked={operationalDecisions['Logs e rastreamento'] || false}
+                            name="Logs and Tracing"
+                            checked={operationalDecisions['Logs and Tracing'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Logs e rastreamento: Integrar sistemas de registro (logs) e rastreamento para acompanhar eventos durante o processo de compilação e implantação. Isso facilita a identificação rápida de problemas e a análise de desempenho.
+                          Logs and Tracing: Integrate logging and tracing systems to track events during the compilation and deployment process. This facilitates quick problem identification and performance analysis.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Métricas de Desempenho"
-                            checked={operationalDecisions['Métricas de Desempenho'] || false}
+                            name="Performance Metrics"
+                            checked={operationalDecisions['Performance Metrics'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Métricas de Desempenho: Implementar métricas de desempenho durante a compilação e a implantação para monitorar a eficiência do processo. Utilize ferramentas que ofereçam visibilidade em tempo real e alertas para eventos críticos.
+                          Performance Metrics: Implement performance metrics during compilation and deployment to monitor the efficiency of the process. Use tools that provide real-time visibility and alerts for critical events.
                         </label>
                       </div>
                     </ul>
                     <div className="blue-box-2">
-                      <strong>Exemplo Prático:</strong> 
-                      Ao implementar a automação, a equipe decide integrar uma ferramenta CI/CD, como <a href="https://www.jenkins.io/" target="_blank" rel="noreferrer">Jenkins</a>, ao repositório de código-fonte...
+                      <strong>Practical Example: </strong> 
+                      When implementing automation, the team decides to integrate a CI/CD tool like <a href="https://www.jenkins.io/" target="_blank" rel="noreferrer">Jenkins</a> into the source code repository...
                     </div>
                   </ul>
                 </Tab>
-                <Tab eventKey="costs" title="Compartilhamento de Código">
+                <Tab eventKey="costs" title="Code Sharing">
                   <ul className="no-bullets">
-                    <li><em>Objetivo:</em> Facilitar e otimizar o compartilhamento de código entre os diferentes micro-frontends, promovendo uma abordagem eficiente e colaborativa no desenvolvimento distribuído.</li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Objective:</em> Facilitate and optimize code sharing among different micro-frontends, promoting an efficient and collaborative approach in distributed development.</li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Identificação de Funcionalidades Comuns"
-                            checked={operationalDecisions['Identificação de Funcionalidades Comuns'] || false}
+                            name="Identification of Common Functionalities"
+                            checked={operationalDecisions['Identification of Common Functionalities'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Identificação de Funcionalidades Comuns: Identificar funcionalidades comuns que possam ser usadas por bibliotecas.
+                          Identification of Common Functionalities: Identify common functionalities that can be used by libraries.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Web Components e Design System"
-                            checked={operationalDecisions['Web Components e Design System'] || false}
+                            name="Web Components and Design System"
+                            checked={operationalDecisions['Web Components and Design System'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Web Components e Design System: Criar Web Components para encapsular funcionalidades específicas, garantindo modularidade e reusabilidade e integrar ao Design System da organização, garantindo consistência visual e de interação em todos os micro-frontends.
+                          Web Components and Design System: Create Web Components to encapsulate specific functionalities, ensuring modularity and reusability, and integrate them into the organization&apos;s Design System, ensuring visual and interaction consistency across all micro-frontends.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Controle de Versão"
-                            checked={operationalDecisions['Controle de Versão'] || false}
+                            name="Version Control"
+                            checked={operationalDecisions['Version Control'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Controle de Versão: Implementar um sistema de controle de versão como git utilizando ferramentas de gestão de pacotes npm ou yarn.
+                          Version Control: Implement a version control system like git using package management tools like npm or yarn.
                         </label>
                       </div>
                     </ul>
                     <div className="blue-box-2">
-                      <strong>Exemplo Prático:</strong> 
-                      A equipe inicia o processo identificando funcionalidades comuns que podem ser encapsuladas em bibliotecas. Desenvolvem Web Components reutilizáveis para modularidade e reusabilidade, integrando-os ao Design System da organização para garantir consistência visual e de interação. Optam por utilizar <a href="https://git-scm.com/" target="_blank" rel="noreferrer">Git</a> como sistema de controle de versão, combinado com <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer">npm</a> ou <a href="https://yarnpkg.com/" target="_blank" rel="noreferrer">yarn</a> para gerenciamento eficiente de pacotes...
+                      <strong>Practical Example: </strong> 
+                      The team starts the process by identifying common functionalities that can be encapsulated in libraries. They develop reusable Web Components for modularity and reusability, integrating them into the organization&apos;s Design System to ensure visual and interaction consistency. They choose to use <a href="https://git-scm.com/" target="_blank" rel="noreferrer">Git</a> as the version control system, combined with efficient package management using <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer">npm</a> or <a href="https://yarnpkg.com/" target="_blank" rel="noreferrer">yarn</a>...
                     </div>
                   </ul>
                 </Tab>
                 <Tab eventKey="change-management" title="Performance">
                   <ul className="no-bullets">
-                    <li><em>Objetivo:</em> Garantir um desempenho eficiente na arquitetura de Micro-Frontends, otimizando a carga, renderização e interação das interfaces para proporcionar uma experiência do usuário ágil e responsiva.</li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Objective:</em> Ensure efficient performance in the Micro-Frontends architecture, optimizing the loading, rendering, and interaction of interfaces to provide an agile and responsive user experience.</li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Carregamento Assíncrono de Módulos"
-                            checked={operationalDecisions['Carregamento Assíncrono de Módulos'] || false}
+                            name="Asynchronous Module Loading"
+                            checked={operationalDecisions['Asynchronous Module Loading'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Carregamento Assíncrono de Módulos: Adotar estratégias de carregamento assíncrono, como Lazy Loading, para carregar módulos somente quando necessário, reduzindo o tempo de carregamento inicial.
+                          Asynchronous Module Loading: Adopt asynchronous loading strategies, such as Lazy Loading, to load modules only when needed, reducing the initial loading time.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Otimização de Renderização"
-                            checked={operationalDecisions['Otimização de Renderização'] || false}
+                            name="Rendering Optimization"
+                            checked={operationalDecisions['Rendering Optimization'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Otimização de Renderização: Utilizar técnicas como Virtual DOM ou Shadow DOM para otimizar a renderização, minimizando as atualizações desnecessárias na interface do usuário.
+                          Rendering Optimization: Use techniques like Virtual DOM or Shadow DOM to optimize rendering, minimizing unnecessary updates to the user interface.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Gestão de Estado"
-                            checked={operationalDecisions['Gestão de Estado'] || false}
+                            name="State Management"
+                            checked={operationalDecisions['State Management'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Gestão de Estado: Implementar uma gestão de estado escolhendo uma solução que minimize a reatividade excessiva e mantenha um estado coerente entre os micro-frontends.
+                          State Management: Implement state management by choosing a solution that minimizes excessive reactivity and maintains consistent state across micro-frontends.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Cache de Recursos"
-                            checked={operationalDecisions['Cache de Recursos'] || false}
+                            name="Resource Caching"
+                            checked={operationalDecisions['Resource Caching'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Cache de Recursos: Implementar estratégias de cache para recursos estáticos e dinâmicos, reduzindo a necessidade de buscar repetidamente os mesmos dados do servidor.
+                          Resource Caching: Implement caching strategies for static and dynamic resources, reducing the need to repeatedly fetch the same data from the server.
                         </label>
                       </div>
                     </ul>
                     <div className="blue-box-2">
-                      <strong>Exemplo Prático:</strong> 
-                      A equipe decide adotar o Lazy Loading para carregar módulos de forma assíncrona, especialmente aqueles que não são essenciais na carga inicial. Implementam o Virtual DOM para otimizar a renderização, garantindo atualizações eficientes. Escolhem o Redux como solução de gestão de estado devido à sua eficiência com micro-frontends. Adicionalmente, estabelecem estratégias de cache usando armazenamento local para recursos estáticos e cache de servidor para dados dinâmicos, promovendo um desempenho eficiente na arquitetura de Micro-Frontends...
+                      <strong>Practical Example: </strong> 
+                      The team decides to adopt Lazy Loading to asynchronously load modules, especially those that are not essential in the initial load. They implement Virtual DOM to optimize rendering, ensuring efficient updates. They choose Redux as the state management solution due to its efficiency with micro-frontends. Additionally, they establish caching strategies using local storage for static resources and server-side caching for dynamic data, promoting efficient performance in the Micro-Frontends architecture...
                     </div>
                   </ul>
                 </Tab>
-                <Tab eventKey="organizational-structure" title="Estrutura Organizacional">
+                <Tab eventKey="organizational-structure" title="Organizational Structure">
                   <ul className="no-bullets">
-                    <li><em>Objetivo:</em> Estabelecer uma estrutura organizacional eficiente para a implementação de Micro-Frontends, promovendo uma colaboração fluida entre equipes e garantindo a coesão na entrega de funcionalidades.</li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Objective:</em> Establish an efficient organizational structure for the implementation of Micro-Frontends, promoting seamless collaboration between teams and ensuring cohesion in feature delivery.</li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Modelo de Squad"
-                            checked={operationalDecisions['Modelo de Squad'] || false}
+                            name="Squad Model"
+                            checked={operationalDecisions['Squad Model'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Modelo de Squad: Implementar o modelo de Squads, onde equipes multifuncionais e autônomas são responsáveis por recursos específicos. Isso promove a especialização e agilidade, favorecendo a entrega independente de micro-frontends.
+                          Squad Model: Implement the Squad model, where multifunctional and autonomous teams are responsible for specific features. This promotes specialization and agility, enabling independent delivery of micro-frontends.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Metodologia Ágil"
-                            checked={operationalDecisions['Metodologia Ágil'] || false}
+                            name="Agile Methodology"
+                            checked={operationalDecisions['Agile Methodology'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Metodologia Ágil: Adotar metodologias ágeis, como Scrum ou Kanban, para gerenciar o desenvolvimento de micro-frontends. Sprints regulares, reuniões de retrospectiva e práticas ágeis fortalecem a colaboração e a adaptação contínua.
+                          Agile Methodology: Adopt agile methodologies like Scrum or Kanban to manage the development of micro-frontends. Regular sprints, retrospective meetings, and agile practices strengthen collaboration and continuous adaptation.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Ferramentas de Colaboração"
-                            checked={operationalDecisions['Ferramentas de Colaboração'] || false}
+                            name="Collaboration Tools"
+                            checked={operationalDecisions['Collaboration Tools'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Ferramentas de Colaboração: Utilizar ferramentas de colaboração, como Slack, Microsoft Teams ou outras plataformas de comunicação. Essas ferramentas facilitam a comunicação entre equipes distribuídas, promovendo a troca de informações de forma eficaz.
+                          Collaboration Tools: Use collaboration tools like Slack, Microsoft Teams, or other communication platforms. These tools facilitate communication between distributed teams, promoting effective information exchange.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Cultura de DevOps"
-                            checked={operationalDecisions['Cultura de DevOps'] || false}
+                            name="DevOps Culture"
+                            checked={operationalDecisions['DevOps Culture'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Cultura de DevOps: Cultivar uma cultura de DevOps, integrando desenvolvimento e operações. Isso inclui automação de processos, entrega contínua e monitoramento, garantindo eficiência na implementação e manutenção.
+                          DevOps Culture: Foster a DevOps culture by integrating development and operations. This includes process automation, continuous delivery, and monitoring, ensuring efficiency in implementation and maintenance.
                         </label>
                       </div>
                     </ul>
                     <div className="blue-box-2">
-                      <strong>Exemplo Prático:</strong> 
-                      A equipe decide adotar o modelo de Squads, formando equipes dedicadas a diferentes micro-frontends. Escolhem a metodologia Scrum para gerenciar o desenvolvimento, realizando sprints regulares e reuniões de retrospectiva. Utilizam o Teams como plataforma de comunicação para facilitar a colaboração entre as equipes distribuídas. Essas escolhas estruturais contribuem para uma implementação prática e colaborativa de Micro-Frontend.
+                      <strong>Practical Example: </strong> 
+                      The team decides to adopt the Squad model, forming teams dedicated to different micro-frontends. They choose the Scrum methodology to manage development, conducting regular sprints and retrospective meetings. They use Teams as the communication platform to facilitate collaboration among distributed teams. These structural choices contribute to a practical and collaborative implementation of Micro-Frontends.
                     </div>
                   </ul>
                 </Tab>

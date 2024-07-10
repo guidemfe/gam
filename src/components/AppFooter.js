@@ -1,12 +1,13 @@
 import React from 'react'
 import { CFooter } from '@coreui/react'
+import '../scss/_custom.scss'
 
 const AppFooter = () => {
   return (
-    <CFooter className="mt-4">
+    <CFooter className="mt-4 footer-text">
       <div>
-          GAM v1.0-beta
-        <span className="ms-1">&copy; 2024 - Guideline for Adoption Micro-Frontend.</span>
+          GAM v1.0
+        <span className="ms-1 footer-text">&copy; 2024 - Guideline for Adoption Micro-Frontend. Licensed under CC BY-SA 4.0</span>
       </div>
     </CFooter>
   )

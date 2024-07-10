@@ -56,80 +56,80 @@ const PilotProject = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-              <h4>Projeto Piloto</h4>
+              <h4>Pilot Project</h4>
               <hr />
               <div>
                 <Alert variant="success">
-                  Percentual de opções selecionadas: {localStorage.getItem('pilotPercentage') || '0.0'}%
+                  Percentage of selected options: {localStorage.getItem('pilotPercentage') || '0.0'}%
                 </Alert>
               </div>
               <hr />
               <p>
-              Esta seção do Projeto Piloto Guidelines for Adopting Micro-Frontends (GAM) representa um marco no processo de implementação prática da arquitetura de Micro-Frontends. Nesta fase, foi utilizado um ambiente controlado, onde o estudo das viabilidades técnicas, as decisões operacionais e de integração previamente delineadas foram aplicadas de maneira tangível. O Projeto Piloto serve como um teste de validação, permitindo que as equipes de desenvolvimento, arquitetos de software e líderes de projeto observem como as estratégias teóricas se traduzem na realidade operacional. A figura abaixo fornece uma visão geral do papel central do Projeto Piloto no contexto do GAM.
+              This section of the Pilot Project Guidelines for Adopting Micro-Frontends (GAM) represents a milestone in the practical implementation process of the Micro-Frontends architecture. In this phase, a controlled environment was used, where the study of technical feasibility, previously outlined operational and integration decisions were applied tangibly. The Pilot Project serves as a validation test, allowing development teams, software architects, and project leaders to observe how theoretical strategies translate into operational reality. The figure below provides an overview of the central role of the Pilot Project in the context of GAM.
               </p>
               <p>
-              <img src={PilotoImg} alt="Projeto Piloto" className="img-fluid mb-3" />
+              <img src={PilotoImg} alt="Pilot Project" className="img-fluid mb-3 center-img" />
               </p>
-              <p>Durante esta fase, destacaremos não apenas a implementação técnica, mas também as lições aprendidas e os ajustes necessários à medida que a equipe ganha insights valiosos na aplicação prática do paradigma de Micro-Frontends. O Projeto Piloto oferece uma oportunidade única para avaliar a eficácia das escolhas arquiteturais e de integração em um contexto controlado, antes de uma expansão mais ampla para outros projetos ou áreas do sistema. A escolha do Projeto Piloto é um ponto fundamental para o sucesso da adoção de Micro-Frontends. Nesta etapa, os stakeholders devem considerar os seguintes aspectos:</p>
+              <p>During this phase, we will highlight not only the technical implementation but also the lessons learned and necessary adjustments as the team gains valuable insights into the practical application of the Micro-Frontends paradigm. The Pilot Project offers a unique opportunity to evaluate the effectiveness of architectural and integration choices in a controlled context before a broader expansion to other projects or areas of the system. The choice of the Pilot Project is a key point for the success of Micro-Frontends adoption. At this stage, stakeholders should consider the following aspects:</p>
           </CCardBody>
         </CCard>
         <CCard className="mb-4">
           <CCardBody>
             <section>
               <Tabs defaultActiveKey="alignment" id="integration-implementation-tabs" className="mb-3">
-                <Tab eventKey="alignment" title="Seleção do Projeto Piloto">
+                <Tab eventKey="alignment" title="Pilot Project Selection">
                   <ul className="no-bullets">
-                    <li><em>Objetivo:</em> A escolha do Projeto Piloto é um ponto fundamental para o sucesso da adoção de Micro-Frontends. Nesta etapa, os stakeholders devem considerar os seguintes aspectos.</li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Objective:</em> The choice of the Pilot Project is a key point for the success of Micro-Frontends adoption. At this stage, stakeholders should consider the following aspects.</li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Complexidade do Projeto"
-                            checked={pilotProject['Complexidade do Projeto'] || false}
+                            name="Project Complexity"
+                            checked={pilotProject['Project Complexity'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Complexidade do Projeto: Avaliar a complexidade geral do projeto em termos de funcionalidades, interações e número de componentes. Projetos mais complexos e extensos podem oferecer uma melhor compreensão dos desafios e benefícios do uso de Micro-Frontends.
+                          Project Complexity: Evaluate the overall complexity of the project in terms of functionalities, interactions, and number of components. More complex and extensive projects can provide a better understanding of the challenges and benefits of using Micro-Frontends.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Diversidade de Componentes"
-                            checked={pilotProject['Diversidade de Componentes'] || false}
+                            name="Component Diversity"
+                            checked={pilotProject['Component Diversity'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Diversidade de Componentes: Buscar projetos que possuam uma variedade representativa de componentes. Isso permite explorar como diferentes tipos de funcionalidades podem ser encapsulados em Micro-Frontends e integrados de maneira eficiente.
+                          Component Diversity: Look for projects that have a representative variety of components. This allows exploring how different types of functionalities can be encapsulated in Micro-Frontends and integrated efficiently.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Representatividade do Cenário"
-                            checked={pilotProject['Representatividade do Cenário'] || false}
+                            name="Scenario Representativeness"
+                            checked={pilotProject['Scenario Representativeness'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Representatividade do Cenário: Certifique-se de que o projeto selecionado seja representativo do ambiente mais amplo da organização. Um Piloto que reflita os desafios e requisitos típicos do desenvolvimento frontend da empresa proporcionará insights mais aplicáveis.
+                          Scenario Representativeness: Ensure that the selected project is representative of the broader organization&apos;s environment. A Pilot that reflects typical frontend development challenges and requirements will provide more applicable insights.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Impacto Potencial"
-                            checked={pilotProject['Impacto Potencial'] || false}
+                            name="Potential Impact"
+                            checked={pilotProject['Potential Impact'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Impacto Potencial: Considerar o impacto potencial do Projeto Piloto na organização. Escolher um projeto com impacto significativo, mas controlado, permite avaliar os resultados sem comprometer a estabilidade geral do sistema.
+                          Potential Impact: Consider the potential impact of the Pilot Project on the organization. Choosing a project with significant but controlled impact allows evaluating the results without compromising the overall system stability.
                         </label>
                       </div>
                     </ul>
                     <div className="blue-box-2">
-                      <strong>Exemplo Prático:</strong> 
-                      Durante a fase de implementação do projeto piloto, a equipe opta por selecionar a página de carrinho de compras como o cenário inicial, considerando a complexidade do projeto, pois a página envolve diversas funcionalidades, desde a exibição dos itens no carrinho até a gestão de cupons e opções de pagamento. A diversidade de componentes é assegurada, abrangendo desde elementos simples, como ícones, até componentes mais complexos, como a lógica de aplicação de descontos. A representatividade do cenário é garantida, pois a página de carrinho de compras reflete os desafios típicos do frontend, incluindo interações com o banco de dados de inventário, cálculos de preços e integrações com gateways de pagamento. Quanto ao impacto potencial, o projeto possui relevância significativa, uma vez que melhorias na experiência do usuário nessa etapa do processo de compra podem ter um impacto notável, mas controlado, permitindo uma avaliação aprofundada antes de uma expansão mais ampla da arquitetura de Micro-Frontends para outras áreas do sistema.
+                      <strong>Practical Example: </strong> 
+                      During the implementation phase of the pilot project, the team chooses to select the shopping cart page as the initial scenario, considering the project&apos;s complexity as the page involves various functionalities, from displaying items in the cart to managing coupons and payment options. Component diversity is ensured, ranging from simple elements like icons to more complex components like discount application logic. Scenario representativeness is guaranteed as the shopping cart page reflects typical frontend challenges, including interactions with the inventory database, price calculations, and integrations with payment gateways. As for potential impact, the project has significant relevance as improvements in the user experience at this stage of the purchase process can have a noticeable but controlled impact, allowing for in-depth evaluation before a broader expansion of the Micro-Frontends architecture to other areas of the system.
                     </div>
                   </ul>
                 </Tab>

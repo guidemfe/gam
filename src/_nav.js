@@ -1,8 +1,5 @@
-import { cilDescription, cilPuzzle, cilSpeedometer } from '@coreui/icons';
-import CIcon from '@coreui/icons-react';
 import { CNavGroup, CNavItem, CNavTitle, CBadge } from '@coreui/react';
 import React from 'react';
-import BadgeForViabilidadesTecnicas from './views/gam/viabilities/BadgeForViabilidadesTecnicas'; // Importe o componente BadgeForViabilidadesTecnicas
 
 const _nav = [
   {
@@ -57,13 +54,13 @@ const _nav = [
       },
       {
         component: CNavItem,
-        name: 'Integration Decisions',
-        to: '/gam/implementation/integration-decisions',
+        name: 'Operational Decisions',
+        to: '/gam/implementation/operational-decisions',
       },
       {
         component: CNavItem,
-        name: 'Operational Decisions',
-        to: '/gam/implementation/operational-decisions',
+        name: 'Integration Decisions',
+        to: '/gam/implementation/integration-decisions',
       },
     ],
   },

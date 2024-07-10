@@ -54,19 +54,19 @@ const TechnicalViabilities = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardBody>
-            <h4>Viabilidades Técnicas</h4>
+            <h4>Technical Viabilities</h4>
             <hr />
             <div>
               <Alert variant="success">
-                Percentual de opções selecionadas: {localStorage.getItem('technicalPercentage') || '0.0'}%
+                Percentage of selected options: {localStorage.getItem('technicalPercentage') || '0.0'}%
               </Alert>
             </div>
             <p>
-              O Estudo de Viabilidade, no contexto do Guia para Adoção de Micro-Frontends (GAM), 
-              é uma fase estratégica e sequencial que busca analisar as viabilidades gerenciais e técnicas 
-              antes de decidir pela implementação da arquitetura de Micro-Frontends. 
-              Essa abordagem visa garantir uma transição suave e bem-sucedida para essa arquitetura inovadora. A imagem abaixo demostra o fluxo
-              de atividades do Estudo de Viabilidade.
+              The Feasibility Study, in the context of the Guide for Micro-Frontends Adoption (GAM),
+              is a strategic and sequential phase that seeks to analyze managerial and technical feasibilities
+              before deciding on the implementation of the Micro-Frontends architecture.
+              This approach aims to ensure a smooth and successful transition to this innovative architecture. The image below demonstrates the flow
+              of activities of the Feasibility Study.
             </p>
           </CCardBody>
         </CCard>
@@ -74,167 +74,167 @@ const TechnicalViabilities = () => {
           <CCardBody>
             <section>
               <Tabs defaultActiveKey="compatibility" id="technical-feasibilities-tabs" className="mb-3">
-                <Tab eventKey="compatibility" title="Compatibilidade Tecnológica">
+                <Tab eventKey="compatibility" title="Technological Compatibility">
                   <ul className="no-bullets">
                     <li>
-                      <em>Objetivo:</em> Garantir que a arquitetura de Micro-Frontends seja compatível com as tecnologias existentes na infraestrutura da empresa, minimizando conflitos e promovendo uma transição suave.
+                      <em>Objective:</em> Ensure that the Micro-Frontends architecture is compatible with the existing technologies in the company&apos;s infrastructure, minimizing conflicts and promoting a smooth transition.
                     </li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Avaliação da Infraestrutura Atual"
-                            checked={technicalViabilities['Avaliação da Infraestrutura Atual'] || false}
+                            name="Evaluation of Current Infrastructure"
+                            checked={technicalViabilities['Evaluation of Current Infrastructure'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Avaliação da Infraestrutura Atual: Realizar uma análise detalhada da infraestrutura tecnológica existente, identificando as tecnologias, frameworks e bibliotecas em uso.
+                          Evaluation of Current Infrastructure: Perform a detailed analysis of the existing technological infrastructure, identifying the technologies, frameworks, and libraries in use.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Identificação de Conflitos Potenciais"
-                            checked={technicalViabilities['Identificação de Conflitos Potenciais'] || false}
+                            name="Identification of Potential Conflicts"
+                            checked={technicalViabilities['Identification of Potential Conflicts'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Identificação de Conflitos Potenciais: Identificar possíveis conflitos entre as tecnologias utilizadas atualmente e aquelas associadas à arquitetura de Micro-Frontends.
+                          Identification of Potential Conflicts: Identify possible conflicts between the technologies currently used and those associated with the Micro-Frontends architecture.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Padronização de Tecnologias"
-                            checked={technicalViabilities['Padronização de Tecnologias'] || false}
+                            name="Standardization of Technologies"
+                            checked={technicalViabilities['Standardization of Technologies'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Padronização de Tecnologias: Considerar a padronização de tecnologias que são comuns tanto na infraestrutura atual quanto na arquitetura de Micro-Frontends para facilitar a integração.
+                          Standardization of Technologies: Consider the standardization of technologies that are common to both the current infrastructure and the Micro-Frontends architecture to facilitate integration.
                         </label>
                       </div>
                       <div>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Testes de Compatibilidade"
-                            checked={technicalViabilities['Testes de Compatibilidade'] || false}
+                            name="Compatibility Testing"
+                            checked={technicalViabilities['Compatibility Testing'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Testes de Compatibilidade: Implementar testes específicos usando o projeto piloto para verificar a compatibilidade entre os componentes de Micro-Frontends e a infraestrutura existente.
+                          Compatibility Testing: Implement specific tests using the pilot project to verify the compatibility between the Micro-Frontends components and the existing infrastructure.
                         </label>
                       </div>
                     </ul>
                   </ul>
                   <div>
                     <div className="blue-box">
-                      <strong>Exemplo Prático:</strong> Suponha que a empresa utilize o Angular como framework principal em seus sistemas existentes. Ao iniciar a adoção de Micro-Frontends, a equipe de análise de compatibilidade avalia a versão específica do Angular em uso e confirma sua compatibilidade com os requisitos do Micro-Frontend. Além disso, ao identificar a necessidade de uma biblioteca de gerenciamento de estado, a equipe opta por padronizar o uso do Redux, que é amplamente aceito tanto na infraestrutura atual quanto na arquitetura de Micro-Frontends. Durante o projeto piloto, são conduzidos testes específicos para verificar a interoperabilidade entre os Micro-Frontends e os serviços legados, garantindo uma transição suave e minimizando conflitos.
+                      <strong>Practical Example: </strong> Suppose the company uses Angular as the main framework in its existing systems. When starting the adoption of Micro-Frontends, the compatibility analysis team evaluates the specific version of Angular in use and confirms its compatibility with the Micro-Frontend requirements. Additionally, when identifying the need for a state management library, the team chooses to standardize the use of Redux, which is widely accepted in both the current infrastructure and the Micro-Frontends architecture. During the pilot project, specific tests are conducted to verify the interoperability between the Micro-Frontends and the legacy services, ensuring a smooth transition and minimizing conflicts.
                     </div>
                   </div>
                 </Tab>
-                <Tab eventKey="integration" title="Desafios de Integração">
+                <Tab eventKey="integration" title="Integration Challenges">
                   <ul className="no-bullets">
                     <li>
-                      <em>Objetivo:</em> Identificar e abordar proativamente os desafios de integração que possam surgir durante a adoção da arquitetura de Micro-Frontends.
+                      <em>Objective:</em> Identify and proactively address integration challenges that may arise during the adoption of the Micro-Frontends architecture.
                     </li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Mapeamento de Interfaces"
-                            checked={technicalViabilities['Mapeamento de Interfaces'] || false}
+                            name="Interface Mapping"
+                            checked={technicalViabilities['Interface Mapping'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Mapeamento de Interfaces: Realizar um mapeamento claro das interfaces entre os Micro-Frontends e outros componentes do sistema.
+                          Interface Mapping: Clearly map the interfaces between the Micro-Frontends and other system components.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Definição de Contratos"
-                            checked={technicalViabilities['Definição de Contratos'] || false}
+                            name="Definition of Contracts"
+                            checked={technicalViabilities['Definition of Contracts'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Definição de Contratos: Estabelecer contratos claros e documentados entre os Micro-Frontends e os serviços backend, garantindo consistência nas interações.
+                          Definition of Contracts: Establish clear and documented contracts between the Micro-Frontends and the backend services, ensuring consistency in interactions.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Monitoramento Contínuo"
-                            checked={technicalViabilities['Monitoramento Contínuo'] || false}
+                            name="Continuous Monitoring"
+                            checked={technicalViabilities['Continuous Monitoring'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Monitoramento Contínuo: Implemente mecanismos de monitoramento contínuo para identificar e resolver rapidamente problemas de integração.
+                          Continuous Monitoring: Implement continuous monitoring mechanisms to quickly identify and resolve integration issues.
                         </label>
                       </li>
                     </ul>
                   </ul>
                   <div className="blue-box">
-                    <strong>Exemplo Prático:</strong> Durante a implementação de Micro-Frontends, um desafio de integração foi identificado na comunicação entre um Micro-Frontend específico e um serviço backend essencial. Utilizando o mapeamento de interfaces previamente documentado, a equipe consegue rapidamente diagnosticar o problema e atualizar o contrato de API. O monitoramento contínuo alerta a equipe sobre a anomalia, permitindo uma intervenção rápida e minimizando o impacto nos usuários finais.
+                    <strong>Practical Example: </strong> During the implementation of Micro-Frontends, an integration challenge was identified in the communication between a specific Micro-Frontend and an essential backend service. Using the previously documented interface mapping, the team can quickly diagnose the problem and update the API contract. Continuous monitoring alerts the team to the anomaly, allowing for quick intervention and minimizing the impact on end users.
                   </div>
                 </Tab>
-                <Tab eventKey="functional-complexities" title="Complexidades Funcionais">
+                <Tab eventKey="functional-complexities" title="Functional Complexities">
                   <ul className="no-bullets">
                     <li>
-                      <em>Objetivo:</em> Entender e mitigar as complexidades funcionais associadas à arquitetura de Micro-Frontends, garantindo a entrega de funcionalidades de forma eficiente.
+                      <em>Objective:</em> Understand and mitigate the functional complexities associated with the Micro-Frontends architecture, ensuring the efficient delivery of functionalities.
                     </li>
-                    <li><em>Recomendações:</em></li>
+                    <li><em>Recommendations:</em></li>
                     <ul className="no-bullets">
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Análise de Requisitos"
-                            checked={technicalViabilities['Análise de Requisitos'] || false}
+                            name="Requirements Analysis"
+                            checked={technicalViabilities['Requirements Analysis'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Análise de Requisitos: Realizar uma análise aprofundada dos requisitos funcionais da aplicação, identificando possíveis complexidades.
+                          Requirements Analysis: Perform an in-depth analysis of the application&apos;s functional requirements, identifying possible complexities.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Design Modular"
-                            checked={technicalViabilities['Design Modular'] || false}
+                            name="Modular Design"
+                            checked={technicalViabilities['Modular Design'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Design Modular: Adote um design modular para os Micro-Frontends, dividindo a aplicação em componentes independentes para facilitar o gerenciamento das complexidades.
+                          Modular Design: Adopt a modular design for the Micro-Frontends, dividing the application into independent components to facilitate the management of complexities.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Testes Unitários e de Integração"
-                            checked={technicalViabilities['Testes Unitários e de Integração'] || false}
+                            name="Unit and Integration Testing"
+                            checked={technicalViabilities['Unit and Integration Testing'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Testes Unitários e de Integração: Implementar testes unitários e de integração para validar a funcionalidade dos Micro-Frontends individualmente e em conjunto.
+                          Unit and Integration Testing: Implement unit and integration tests to validate the functionality of the Micro-Frontends individually and together.
                         </label>
                       </li>
                       <li>
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Documentação Clara"
-                            checked={technicalViabilities['Documentação Clara'] || false}
+                            name="Clear Documentation"
+                            checked={technicalViabilities['Clear Documentation'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Documentação Clara: Mantenha uma documentação clara e abrangente que descreva as interações funcionais entre os Micro-Frontends e outros componentes.
+                          Clear Documentation: Maintain clear and comprehensive documentation that describes the functional interactions between the Micro-Frontends and other components.
                         </label>
                       </li>
                     </ul>
                   </ul>
                   <div>
                     <div className="blue-box">
-                      <strong>Exemplo Prático:</strong> Durante a análise de requisitos foi identificado um requisito funcional complexo relacionado à gestão de permissões de usuários em diferentes Micro-Frontends. Ao adotar um design modular, a equipe decide criar um Micro-Frontend dedicado exclusivamente à gestão de permissões. Testes unitários e de integração são implementados para garantir que essa funcionalidade se integre sem problemas aos demais Micro-Frontends. A documentação clara detalha os fluxos de interação, simplificando a compreensão da complexidade funcional pela equipe.
+                      <strong>Practical Example: </strong> During the requirements analysis, a complex functional requirement related to user permission management in different Micro-Frontends was identified. By adopting a modular design, the team decides to create a dedicated Micro-Frontend solely for permission management. Unit and integration tests are implemented to ensure that this functionality integrates smoothly with the other Micro-Frontends. The clear documentation details the interaction flows, simplifying the understanding of the functional complexity by the team.
                     </div>
                   </div>
                 </Tab>
