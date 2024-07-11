@@ -135,7 +135,7 @@ const OperationalDecisions = () => {
                     </ul>
                     <div className="blue-box-2">
                       <strong>Practical Example: </strong> 
-                      When implementing automation, the team decides to integrate a CI/CD tool like <a href="https://www.jenkins.io/" target="_blank" rel="noreferrer">Jenkins</a> into the source code repository...
+                      When implementing automation, the team decides to integrate a CI/CD tool, such as Jenkins, into the source code repository. Each code change automatically triggers a continuous delivery pipeline, which includes automated testing and the generation of Docker containers ready for deployment. Additionally, they choose to use Kubernetes to orchestrate these containers, ensuring efficient scalability. For observability, they integrate logging and tracing tools like the ELK Stack to monitor events during the build and deployment process. Performance metrics are configured using Prometheus, providing real-time visibility and alerts for critical events. These operational decisions promote agile and efficient building and deployment of micro-frontends.
                     </div>
                   </ul>
                 </Tab>
@@ -180,7 +180,7 @@ const OperationalDecisions = () => {
                     </ul>
                     <div className="blue-box-2">
                       <strong>Practical Example: </strong> 
-                      The team starts the process by identifying common functionalities that can be encapsulated in libraries. They develop reusable Web Components for modularity and reusability, integrating them into the organization&apos;s Design System to ensure visual and interaction consistency. They choose to use <a href="https://git-scm.com/" target="_blank" rel="noreferrer">Git</a> as the version control system, combined with efficient package management using <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer">npm</a> or <a href="https://yarnpkg.com/" target="_blank" rel="noreferrer">yarn</a>...
+                      The team begins the process by identifying common functionalities that can be encapsulated into libraries. They develop reusable Web Components for modularity and reusability, integrating them into the organization&apos;s Design System to ensure visual and interaction consistency. They choose to use Git as the version control system, combined with npm or yarn for efficient package management. These decisions aim to promote efficient code sharing among the micro-frontends, facilitating collaborative and distributed development.
                     </div>
                   </ul>
                 </Tab>
@@ -236,7 +236,7 @@ const OperationalDecisions = () => {
                     </ul>
                     <div className="blue-box-2">
                       <strong>Practical Example: </strong> 
-                      The team decides to adopt Lazy Loading to asynchronously load modules, especially those that are not essential in the initial load. They implement Virtual DOM to optimize rendering, ensuring efficient updates. They choose Redux as the state management solution due to its efficiency with micro-frontends. Additionally, they establish caching strategies using local storage for static resources and server-side caching for dynamic data, promoting efficient performance in the Micro-Frontends architecture...
+                      The team decides to adopt Lazy Loading to asynchronously load modules, especially those not essential during the initial load. They implement the Virtual DOM to optimize rendering, ensuring efficient updates. They choose Redux as the state management solution due to its efficiency with micro-frontends. Additionally, they establish caching strategies using local storage for static resources and server-side caching for dynamic data, promoting efficient performance in the Micro-Frontends architecture.
                     </div>
                   </ul>
                 </Tab>

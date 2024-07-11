@@ -12,7 +12,7 @@ In this section, we provide an overview of Micro-Frontends architecture, highlig
 
 ## GET STARTED
 
-### Feasibility Study
+### Viabilities Study
 
 Before starting implementation, conducting a comprehensive feasibility study is crucial. This section covers the following perspectives:
 

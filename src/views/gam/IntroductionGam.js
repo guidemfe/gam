@@ -1,4 +1,4 @@
-import { CCard, CCardBody, CCardHeader, CCol, CRow, CButton } from '@coreui/react';
+import { CCard, CCardBody, CCol, CRow } from '@coreui/react';
 import React from 'react';
 import BigPictureImage from '../../assets/images/gam_big_picture.png';
 
@@ -14,10 +14,10 @@ const IntroductionGam = () => {
 
 Our goal is to provide a clear and practical path so that you can fully leverage the benefits of micro-frontends, from the planning phase to ongoing execution and maintenance.
 
-Whether you are an experienced developer or a curious beginner, the GAM offers valuable insights, practical examples, and step-by-step guidance to facilitate your journey.
+Whether you are an experienced developer or a curious beginner, the GAM offers valuable insights, practical examples, and step-by-step guidance to facilitate your journey. The image below represents the phases of GAM.
             </p>
 
-            <img src={BigPictureImage} alt="Big" className="img-fluid mb-3"  />
+            <img src={BigPictureImage} alt="Big" className="img-fluid mb-3 center-img"  />
 
             <h5><strong>Phases of the GAM</strong></h5>
             <ul>
@@ -36,6 +36,7 @@ Whether you are an experienced developer or a curious beginner, the GAM offers v
             </ul>
             <h5><strong>How to Navigate the Guidelines to Adoption Micro-frontends (GAM)</strong></h5>
             <p>The Guidelines to Adoption Micro-frontends (GAM) is structured to provide you with a clear and organized pathway through each phase of the adoption process. Each phase is divided into its own dedicated page, making it easy to follow and implement the steps sequentially.</p>
+            <p>Although each phase (or sub-phase) can represent up to 100% of the suggested recommendations, it is important to note that it is not necessary to apply all of them, as each project has its specificities. However, the closer the implementation is to 100%, the greater the likelihood of the project&apos;s success.</p>
             <h6><strong>Phase Breakdown</strong></h6>
             <p>
             Each phase (Viability Study, Implementation, Expansion, and Pilot Project) is comprehensively detailed on separate pages. As you progress through the guide, you will encounter specific recommendations and best practices tailored to that phase. These recommendations are designed to help you implement the micro-frontends architecture efficiently and effectively.

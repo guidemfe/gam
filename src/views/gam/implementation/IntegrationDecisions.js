@@ -5,18 +5,48 @@ import { Tabs, Tab, Alert } from 'react-bootstrap';
 
 import '../../../scss/_custom.scss';
 
-const TOTAL_ITEMS = 11;
-
 const IntegrationDecision = () => {
   const [integrationDecisions, setCheckedItems] = useState({});
   const [showMessage, setShowMessage] = useState(false);
   const [integrationPercentage, setSelectedPercentageState] = useState(0);
-  const [selectValue, setSelectValue] = useState('');
-  const [showCheckboxes, setShowCheckboxes] = useState(false);
+  const [selectValueDefine, setSelectValueDefine] = useState('');
+  const [selectValueComposition, setSelectValueComposition] = useState('');
+  const [showCheckboxesDefine, setShowCheckboxesDefine] = useState(false);
+  const [showCheckboxesComposition, setShowCheckboxesComposition] = useState(false);
   const dispatch = useDispatch();
+
+
+  const TOTAL_ITEMS_DEFINE_HORIZONTAL = 2;
+  const TOTAL_ITEMS_DEFINE_VERTICAL = 1;
+  const TOTAL_ITEMS_COMPOSITION_CLIENT = 4;
+  const TOTAL_ITEMS_COMPOSITION_SERVER = 2;
+  const TOTAL_ITEMS_COMPOSITION_EDGE = 3;
+  const TOTAL_ITEMS_ROUTE = 3;
+  const TOTAL_ITEMS_COMMUNICATION = 5;
+
+  const getTotalItems = () => {
+    let total = TOTAL_ITEMS_ROUTE + TOTAL_ITEMS_COMMUNICATION; // items without select
+
+    if (selectValueDefine === 'Horizontal') {
+      total += TOTAL_ITEMS_DEFINE_HORIZONTAL;
+    } else if (selectValueDefine === 'Vertical') {
+      total += TOTAL_ITEMS_DEFINE_VERTICAL;
+    }
+
+    if (selectValueComposition === 'Client-Side') {
+      total += TOTAL_ITEMS_COMPOSITION_CLIENT;
+    } else if (selectValueComposition === 'Server-Side') {
+      total += TOTAL_ITEMS_COMPOSITION_SERVER;
+    } else if (selectValueComposition === 'Edge-Side') {
+      total += TOTAL_ITEMS_COMPOSITION_EDGE;
+    }
+
+    return total;
+  };
 
   useEffect(() => {
     const savedItems = localStorage.getItem('integrationDecisions');
+
     if (savedItems) {
       setCheckedItems(JSON.parse(savedItems));
     }
@@ -27,36 +57,67 @@ const IntegrationDecision = () => {
     }
   }, []);
 
-  const handleChange = (event) => {
+  const handleSelectChangeDefine = (event) => {
     const selectedOption = event.target.value;
-    setSelectValue(selectedOption);
-    setShowCheckboxes(true); // Mostra os checkboxes quando uma opção é selecionada
+    setSelectValueDefine(selectedOption);
+    setShowCheckboxesDefine(true);
+  };
+
+  const handleSelectChangeComposition = (event) => {
+    const selectedOption = event.target.value;
+    setSelectValueComposition(selectedOption);
+    setShowCheckboxesComposition(true);
   };
 
   const handleCheckboxChange = (event) => {
     const itemName = event.target.name;
     const isChecked = event.target.checked;
     setCheckedItems((prevCheckedItems) => {
-      const checkedItemsManagerialFeasibility = {
+      const checkedItemsIntegrationDecisions = {
         ...prevCheckedItems,
         [itemName]: isChecked,
       };
-      localStorage.setItem('integrationDecisions', JSON.stringify(checkedItemsManagerialFeasibility));
-      return checkedItemsManagerialFeasibility;
+      localStorage.setItem('integrationDecisions', JSON.stringify(checkedItemsIntegrationDecisions));
+      return checkedItemsIntegrationDecisions;
     });
   };
 
   useEffect(() => {
+    const totalItems = getTotalItems();
+
+
+    if (localStorage.getItem('integrationDecisions') === null) {
+      console.log('esta vazio')
+    }
+    else {
+      console.log('nao esta vazio')
+      let isHorizontal = localStorage.getItem('integrationDecisions')
+        .includes('Effective Coordination":true') || localStorage.getItem('integrationDecisions')
+          .includes('Rigorous Governance":true')
+      console.log("isHorizontal: ", isHorizontal);
+
+      let isVertical = localStorage.getItem('integrationDecisions')
+        .includes('Responsibility by Domain":true')
+      console.log("isVertical: ", isVertical);
+
+
+
+      if (isHorizontal && isVertical) {
+        console.log('isHorizontal && isVertical')
+      }
+
+    }
+
     const selectedOptions = Object.values(integrationDecisions).filter((value) => value).length;
-    const percentage = (selectedOptions / TOTAL_ITEMS) * 100;
-    if (TOTAL_ITEMS > 0) {
+    const percentage = (selectedOptions / totalItems) * 100;
+    if (totalItems > 0) {
       setSelectedPercentageState(percentage.toFixed(1));
       dispatch({ type: 'SET_INTEGATION_PERCENTAGE', payload: percentage.toFixed(1) });
       localStorage.setItem('integrationPercentage', percentage.toFixed(1));
     }
 
     setShowMessage(percentage === 100);
-  }, [integrationDecisions, dispatch]);
+  }, [integrationDecisions, dispatch, selectValueDefine, selectValueComposition]);
 
   return (
     <CRow>
@@ -66,9 +127,16 @@ const IntegrationDecision = () => {
             <h4>Integration Decisions</h4>
             <hr />
             <div>
-              <Alert variant="success">
-                Percentage of selected options: {localStorage.getItem('integrationPercentage') || '0.0'}%
-              </Alert>
+              {integrationPercentage <= 100 ? (
+                <Alert variant="success">
+                  Percentage of selected options: {localStorage.getItem('integrationPercentage') || '0.0'}%
+                </Alert>
+              ) : null}
+              {integrationPercentage > 100 ? (
+                <Alert variant="danger">
+                  The total percentage of selected options exceeds 100%. Please review your selections Define and Composition.
+                </Alert>
+              ) : null}
             </div>
             <hr />
             <p>
@@ -79,20 +147,21 @@ const IntegrationDecision = () => {
         <CCard className="mb-4">
           <CCardBody>
             <section>
-              <Tabs defaultActiveKey="alignment" id="integration-implementation-tabs" className="mb-3">
+              <Tabs defaultActiveKey="define" id="integration-decisions-tabs" className="mb-3">
+
                 <Tab eventKey="define" title="Define">
                   <p>
                     Choose the Orientation. Identify and define the micro-frontend from the point of view of its division. We can choose to have multiple micro-frontends in the same view (Horizontal Division) or have only one micro-frontend per view (Vertical Division).
                   </p>
-                  <select id="define-options" value={selectValue} onChange={handleChange}>
+                  <select id="define-options" value={selectValueDefine} onChange={handleSelectChangeDefine}>
                     <option value="">Select an option...</option>
                     <option value="Horizontal">Horizontal</option>
                     <option value="Vertical">Vertical</option>
                   </select>
                   <div>
-                    {showCheckboxes && (
+                    {showCheckboxesDefine && (
                       <div>
-                        {selectValue === 'Horizontal' && (
+                        {selectValueDefine === 'Horizontal' && (
                           <ul className="no-bullets">
                             <li><em>Objective:</em> Define the orientation of multiple micro-frontends in the same view</li>
                             <li><em>Recommendation:</em></li>
@@ -126,7 +195,7 @@ const IntegrationDecision = () => {
                             </div>
                           </ul>
                         )}
-                        {selectValue === 'Vertical' && (
+                        {selectValueDefine === 'Vertical' && (
                           <ul className="no-bullets">
                             <li><em>Objective:</em> Define the orientation of only one micro-frontend per view</li>
                             <li><em>Recommendation:</em></li>
@@ -156,164 +225,161 @@ const IntegrationDecision = () => {
                   </div>
                 </Tab>
 
-
                 <Tab eventKey="composition" title="Composition">
                   <p>
                     Choose the composition strategy for Micro-frontends, covering Client-Side, Server-Side, or Edge-Side *
                   </p>
-                  <select id="opcoes" value={selectValue} onChange={handleChange}>
+                  <select id="composition-options" value={selectValueComposition} onChange={handleSelectChangeComposition}>
                     <option value="">Select an option...</option>
                     <option value="Client-Side">Client-Side</option>
                     <option value="Server-Side">Server-Side</option>
                     <option value="Edge-Side">Edge-Side</option>
                   </select>
-                  <div>
-                    {showCheckboxes && (
-                      <div>
-                        {selectValue === 'Client-Side' && (
+                  {showCheckboxesComposition && (
+                    <div>
+                      {selectValueComposition === 'Client-Side' && (
+                        <ul className="no-bullets">
+                          <li><em>Objective:</em> Define the strategy for Client-Side Composition</li>
+                          <li><em>Recommendation:</em></li>
                           <ul className="no-bullets">
-                            <li><em>Objective:</em> Facilitate the dynamic integration of micro-frontends into the client application shell, allowing different parts of the interface to be loaded efficiently.</li>
-                            <li><em>Recommendation:</em></li>
-                            <ul className="no-bullets">
-                              <div>
-                                <label className='ml-2'>
-                                  <input className='input-label'
-                                    type="checkbox"
-                                    name="Use of Iframes"
-                                    checked={integrationDecisions['Use of Iframes'] || false}
-                                    onChange={handleCheckboxChange}
-                                  />
-                                  Use of Iframes: Ensure that each micro-frontend has a JavaScript or HTML file defined as an entry point, facilitating dynamic addition to the Document Object Model (DOM) by the application shell.
-                                </label>
-                              </div>
-                              <div>
-                                <label className='ml-2'>
-                                  <input className='input-label'
-                                    type="checkbox"
-                                    name="Single-SPA"
-                                    checked={integrationDecisions['Single-SPA'] || false}
-                                    onChange={handleCheckboxChange}
-                                  />
-                                  Single-SPA: Enable the composition and delivery of micro-frontends through JavaScript-based integration using Single Page Application (Single-SPA) frameworks like Angular, React, and Vue.
-                                </label>
-                              </div>
-                              <div>
-                                <label className='ml-2'>
-                                  <input className='input-label'
-                                    type="checkbox"
-                                    name="Web Components"
-                                    checked={integrationDecisions['Web Components'] || false}
-                                    onChange={handleCheckboxChange}
-                                  />
-                                  Web Components: Deliver micro-frontends by creating reusable custom elements with web components.
-                                </label>
-                              </div>
-                              <div>
-                                <label className='ml-2'>
-                                  <input className='input-label'
-                                    type="checkbox"
-                                    name="Client-Side Transclusion"
-                                    checked={integrationDecisions['Client-Side Transclusion'] || false}
-                                    onChange={handleCheckboxChange}
-                                  />
-                                  Client-Side Transclusion: Evaluate the client-side inclusion technique, using libraries like h-include, to load components late and dynamically.
-                                </label>
-                              </div>
-
-                            </ul>
-                            <div className="blue-box-2">
-                              <strong>Practical Example: </strong>
-                              In an online news application, the goal is to dynamically integrate different modules such as headlines, related articles, and comments, providing a seamless reading experience. To achieve this, each module will be developed as a micro-frontend with a defined entry point, allowing dynamic embedding in the application shell using iframe elements. The use of the Single-SPA framework will facilitate the integration of micro-frontends developed in Angular, React, and Vue. Custom elements like headline-module and comment-module will be created as Web Components, ensuring modularity and reusability.
-                            </div>
+                            <li>
+                              <label className="ml-2">
+                                <input
+                                  className="input-label"
+                                  type="checkbox"
+                                  name="Component-Based Architecture"
+                                  checked={integrationDecisions['Component-Based Architecture'] || false}
+                                  onChange={handleCheckboxChange}
+                                />
+                                Component-Based Architecture: Utilize a modular approach where each micro-frontend is a self-contained component, promoting reusability and maintainability.
+                              </label>
+                            </li>
+                            <li>
+                              <label className="ml-2">
+                                <input
+                                  className="input-label"
+                                  type="checkbox"
+                                  name="Dynamic Loading"
+                                  checked={integrationDecisions['Dynamic Loading'] || false}
+                                  onChange={handleCheckboxChange}
+                                />
+                                Dynamic Loading: Implement dynamic loading mechanisms to load micro-frontends on demand, optimizing performance and user experience.
+                              </label>
+                            </li>
+                            <li>
+                              <label className="ml-2">
+                                <input
+                                  className="input-label"
+                                  type="checkbox"
+                                  name="Loose Coupling"
+                                  checked={integrationDecisions['Loose Coupling'] || false}
+                                  onChange={handleCheckboxChange}
+                                />
+                                Loose Coupling: Ensure loose coupling between micro-frontends to enable independent development, testing, and deployment.
+                              </label>
+                            </li>
+                            <li>
+                              <label className="ml-2">
+                                <input
+                                  className="input-label"
+                                  type="checkbox"
+                                  name="State Management"
+                                  checked={integrationDecisions['State Management'] || false}
+                                  onChange={handleCheckboxChange}
+                                />
+                                State Management: Define clear strategies for state management to maintain consistency and synchronization between micro-frontends.
+                              </label>
+                            </li>
                           </ul>
-                        )}
-                        {selectValue === 'Server-Side' && (
+                          <div className="blue-box-2">
+                            <strong>Practical Example:</strong> In the context of Client-Side Composition, consider an e-commerce platform where the shopping cart, product catalog, and user profile are separate micro-frontends loaded dynamically based on user interaction, ensuring a responsive and modular architecture.
+                          </div>
+                        </ul>
+                      )}
+                      {selectValueComposition === 'Server-Side' && (
+                        <ul className="no-bullets">
+                          <li><em>Objective:</em> Define the strategy for Server-Side Composition</li>
+                          <li><em>Recommendation:</em></li>
                           <ul className="no-bullets">
-                            <li><em>Objective:</em> Assemble the view at the CDN level, optimizing the global delivery of the application through strategies like Edge Side Includes (ESI).</li>
-                            <li><em>Recommendation:</em></li>
-                            <ul className="no-bullets">
-                              <div>
-                                <label className='ml-2'>
-                                  <input className='input-label'
-                                    type="checkbox"
-                                    name="Use of ESI"
-                                    checked={integrationDecisions['Use of ESI'] || false}
-                                    onChange={handleCheckboxChange}
-                                  />
-                                  Use of ESI: Consider using Edge Side Includes (ESI) to compose at the edge, leveraging the scaling capabilities offered by CDNs and facilitating view assembly.
-                                </label>
-                              </div>
-                              <div>
-                                <label className='ml-2'>
-                                  <input className='input-label'
-                                    type="checkbox"
-                                    name="Consideration of CDN Variations"
-                                    checked={integrationDecisions['Consideration of CDN Variations'] || false}
-                                    onChange={handleCheckboxChange}
-                                  />
-                                  Consideration of CDN Variations: Be aware that ESI can be implemented differently by different CDN providers, requiring special considerations in a multi-CDN strategy or migrations between providers.
-                                </label>
-                              </div>
-
-                            </ul>
-                            <div className="blue-box-2">
-                              <strong>Practical Example: </strong>
-                              In a global e-commerce site, the goal is to optimize content delivery by assembling the view at the CDN level. Edge Side Includes (ESI) strategy is adopted to dynamically compose elements like shopping cart, promotions, and recommendations based on the user&apos;s location. The use of ESI allows efficient assembly at the network edge, leveraging the scaling capabilities offered by CDNs. Careful implementation will consider variations between CDN providers, ensuring an effective strategy in multi-CDN environments or provider migrations.
-                            </div>
+                            <li>
+                              <label className="ml-2">
+                                <input
+                                  className="input-label"
+                                  type="checkbox"
+                                  name="Server-Side Includes (SSI)"
+                                  checked={integrationDecisions['Server-Side Includes (SSI)'] || false}
+                                  onChange={handleCheckboxChange}
+                                />
+                                Server-Side Includes (SSI): Utilize SSI to include server-side processed content in the response, optimizing server load and enhancing performance.
+                              </label>
+                            </li>
+                            <li>
+                              <label className="ml-2">
+                                <input
+                                  className="input-label"
+                                  type="checkbox"
+                                  name="Template-Based Composition"
+                                  checked={integrationDecisions['Template-Based Composition'] || false}
+                                  onChange={handleCheckboxChange}
+                                />
+                                Template-Based Composition: Implement template-based composition where server-side templates are used to assemble micro-frontends into a cohesive page structure.
+                              </label>
+                            </li>
                           </ul>
-                        )}
-                        {selectValue === 'Edge-Side' && (
+                          <div className="blue-box-2">
+                            <strong>Practical Example:</strong> In a Server-Side Composition scenario, consider a content management system where server-side templates dynamically assemble micro-frontends such as headers, navigation bars, and content sections based on user requests, ensuring server-side flexibility and control.
+                          </div>
+                        </ul>
+                      )}
+                      {selectValueComposition === 'Edge-Side' && (
+                        <ul className="no-bullets">
+                          <li><em>Objective:</em> Define the strategy for Edge-Side Composition</li>
+                          <li><em>Recommendation:</em></li>
                           <ul className="no-bullets">
-                            <li><em>Objective:</em> Allow the origin server to compose the view, retrieving different micro-frontends and assembling the final page.</li>
-                            <li><em>Recommendation:</em></li>
-                            <ul className="no-bullets">
-                              <div>
-                                <label className='ml-2'>
-                                  <input className='input-label'
-                                    type="checkbox"
-                                    name="Use Case Analysis"
-                                    checked={integrationDecisions['Use Case Analysis'] || false}
-                                    onChange={handleCheckboxChange}
-                                  />
-                                  Use Case Analysis: Before opting for server-side composition, perform a thorough analysis of the application&apos;s use cases to understand the nature and requirements of the pages to be composed.
-                                </label>
-                              </div>
-                              <div>
-                                <label className='ml-2'>
-                                  <input className='input-label'
-                                    type="checkbox"
-                                    name="Scalability"
-                                    checked={integrationDecisions['Scalability'] || false}
-                                    onChange={handleCheckboxChange}
-                                  />
-                                  Scalability: Develop a clear scalability strategy for the servers to handle a large volume of requests, especially when there is page personalization for each user, to avoid downtime for these users.
-                                </label>
-                              </div>
-                              <div>
-                                <label className='ml-2'>
-                                  <input className='input-label'
-                                    type="checkbox"
-                                    name="Cache"
-                                    checked={integrationDecisions['Cache'] || false}
-                                    onChange={handleCheckboxChange}
-                                  />
-                                  Cache: Evaluate the cacheability of the page to determine the effectiveness of server-side composition. If the page is highly cacheable, leverage the long-lived time policies offered by CDNs, optimizing performance and content delivery efficiency.
-                                </label>
-                              </div>
-
-                            </ul>
-                            <div className="blue-box-2">
-                              <strong>Practical Example: </strong>
-                              In a customized content management system, where different clients require specific views, the goal is to allow the origin server to compose the view by retrieving personalized micro-frontends and assembling the final page. A detailed analysis of use cases is performed to understand the nature and requirements of the pages to be composed. A scalability strategy is adopted considering page personalization for each user. The cacheability of the page is also evaluated, allowing efficient server-side composition, optimizing performance and content delivery efficiency.
-                            </div>
+                            <li>
+                              <label className="ml-2">
+                                <input
+                                  className="input-label"
+                                  type="checkbox"
+                                  name="Content Delivery Network (CDN)"
+                                  checked={integrationDecisions['Content Delivery Network (CDN)'] || false}
+                                  onChange={handleCheckboxChange}
+                                />
+                                Content Delivery Network (CDN): Leverage CDN to cache and deliver micro-frontends from edge servers closer to the user, reducing latency and improving performance.
+                              </label>
+                            </li>
+                            <li>
+                              <label className="ml-2">
+                                <input
+                                  className="input-label"
+                                  type="checkbox"
+                                  name="Edge Computing"
+                                  checked={integrationDecisions['Edge Computing'] || false}
+                                  onChange={handleCheckboxChange}
+                                />
+                                Edge Computing: Utilize edge computing capabilities to process and deliver micro-frontends closer to the user, enhancing responsiveness and reducing dependency on centralized servers.
+                              </label>
+                            </li>
+                            <li>
+                              <label className="ml-2">
+                                <input
+                                  className="input-label"
+                                  type="checkbox"
+                                  name="Global Load Balancing"
+                                  checked={integrationDecisions['Global Load Balancing'] || false}
+                                  onChange={handleCheckboxChange}
+                                />
+                                Global Load Balancing: Implement global load balancing strategies to distribute micro-frontends across edge locations based on user demand and traffic patterns, ensuring optimal performance and availability.
+                              </label>
+                            </li>
                           </ul>
-                        )}
-                      </div>
-                    )}
-                  </div>
-
-                  <hr />
-
+                          <div className="blue-box-2">
+                            <strong>Practical Example:</strong> In the context of Edge-Side Composition, consider a global e-commerce platform where micro-frontends are cached and delivered from edge servers located worldwide, ensuring fast and reliable access to product catalogs, promotional banners, and checkout processes, enhancing global scalability and user experience.
+                          </div>
+                        </ul>
+                      )}
+                    </div>
+                  )}
                 </Tab>
                 <Tab eventKey="route" title="Route">
                   <ul className="no-bullets">
@@ -430,13 +496,16 @@ const IntegrationDecision = () => {
                     </div>
                   </ul>
                 </Tab>
+
               </Tabs>
             </section>
           </CCardBody>
         </CCard>
       </CCol>
     </CRow>
+
   );
-}
+};
 
 export default IntegrationDecision;
+

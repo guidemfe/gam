@@ -62,11 +62,11 @@ const TechnicalViabilities = () => {
               </Alert>
             </div>
             <p>
-              The Feasibility Study, in the context of the Guide for Micro-Frontends Adoption (GAM),
-              is a strategic and sequential phase that seeks to analyze managerial and technical feasibilities
+              The Viabilities Study, in the context of the Guide for Micro-Frontends Adoption (GAM),
+              is a strategic and sequential phase that seeks to analyze managerial and technical viabilities
               before deciding on the implementation of the Micro-Frontends architecture.
               This approach aims to ensure a smooth and successful transition to this innovative architecture. The image below demonstrates the flow
-              of activities of the Feasibility Study.
+              of activities of the Viabilities Study.
             </p>
           </CCardBody>
         </CCard>

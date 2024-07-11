@@ -97,11 +97,11 @@ const PilotProject = () => {
                         <label className='ml-2'>
                           <input className='input-label'
                             type="checkbox"
-                            name="Component Diversity"
-                            checked={pilotProject['Component Diversity'] || false}
+                            name="Diverse Component"
+                            checked={pilotProject['Diverse Component'] || false}
                             onChange={handleCheckboxChange}
                           />
-                          Component Diversity: Look for projects that have a representative variety of components. This allows exploring how different types of functionalities can be encapsulated in Micro-Frontends and integrated efficiently.
+                          Diverse Component: Look for projects that have a representative variety of components. This allows exploring how different types of functionalities can be encapsulated in Micro-Frontends and integrated efficiently.
                         </label>
                       </div>
                       <div>
