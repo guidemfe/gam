@@ -1,17 +1,17 @@
 {
   "name": "gam",
-  "version": "v1.0-beta",
+  "version": "v1.0",
   "description": "GAM - Guideline for Adoption Micro-Frontend",
   "homepage": ".",
   "bugs": {
-    "url": "https://github.com/giovanniamorim/gam/issues"
+    "url": "https://github.com/guidemfe/gam/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/giovanniamorim/gam.git"
+    "url": "https://github.com/guidemfe/gam.git"
   },
   "license": "MIT",
-  "author": "Giovanni Amorim (https://github.com/giovanniamorim)",
+  "author": "GAM (https://github.com/guidemfe)",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
