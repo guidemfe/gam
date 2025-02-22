@@ -17,6 +17,7 @@ const Scalability = React.lazy(() => import('./views/gam/expansion/Scalability')
 const Maintainability = React.lazy(() => import('./views/gam/expansion/Maintainability'))
 
 const PilotProject = React.lazy(() => import('./views/gam/pilot-project/PilotProject'))
+const AboutAutors = React.lazy(() => import('./views/gam/AboutAutors'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home', element: IntroductionGam },
@@ -36,6 +37,7 @@ const routes = [
   { path: '/gam/expansion/maintainability', name: 'Maintainability', element: Maintainability },
 
   { path: '/pilot-project', name: 'Pilot Project', element: PilotProject },
+  { path: '/about-autors', name: 'About Autors', element: AboutAutors },
 ]
 
 export default routes

@@ -1,0 +1,39 @@
+.about-gam-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .about-gam-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-gam-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .about-gam-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+  }
+  
+  .about-gam-card h2 {
+    margin: 0;
+  }
+  
+  .about-gam-linkedin {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #0077b5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

@@ -91,6 +91,11 @@ const _nav = [
     name: 'Pilot Project',
     to: '/pilot-project',
   },
+  {
+    component: CNavItem,
+    name: 'About Autors',
+    to: '/about-autors',
+  },
 ];
 
 export default _nav;
