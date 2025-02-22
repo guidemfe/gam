@@ -13,33 +13,6 @@ const autors = [
     linkedin: "https://www.linkedin.com/in/giovanniamorim"
   },
   {
-    name: "Larissa Rocha",
-    orcid: "0000-0002-8069-5249",
-    institution: "Bahia State University",
-    city: "Salvador, BA",
-    country: "Brazil",
-    email: "larissabastos@uneb.br",
-    linkedin: "https://www.linkedin.com/in/seu-perfil"
-  },
-  {
-    name: "Fabiana Freitas Mendes",
-    orcid: "0000-0002-1724-2044",
-    institution: "Aalto University, Department of Computer Science",
-    city: "Espoo",
-    country: "Finland",
-    email: "fabiana.mendes@aalto.fi",
-    linkedin: "https://www.linkedin.com/in/seu-perfil"
-  },
-  {
-    name: "Rodrigo Pereira dos Santos",
-    orcid: "0000-0003-4749-2551",
-    institution: "Federal University of the State of Rio de Janeiro (UNIRIO)",
-    city: "Rio de Janeiro, RJ",
-    country: "Brazil",
-    email: "rps@uniriotec.br",
-    linkedin: "https://www.linkedin.com/in/seu-perfil"
-  },
-  {
     name: "Edna Dias Canedo",
     orcid: "0000-0002-2159-339X",
     institution: "University of Brasília (UnB), Department of Computer Science",
